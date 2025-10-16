@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Верстка «Kirovohunting»</title>
+</head>
+
+<body>
+	<div class="rootpage">
+		<h1>Верстка «Kirovohunting»</h1>
+		<div class="rootpage__work">
+			<h2>Готовые страницы:</h2>
+			<ol class="rootpage__list">
+				<li><a target="_blank" href="home.html">Главная</a></li>
+				<li><a target="_blank" href="about.html">О нас</a></li>
+				<li><a target="_blank" href="hunting_bases.html">Охотничьи базы</a></li>
+				<li><a target="_blank" href="base_privetlyjie.html">БАЗА ОТДЫХА «ПРИВЕТЛУЖЬЕ»</a></li>
+				<li><a target="_blank" href="base_home_hunter.html">БАЗА ОТДЫХА «Дом охотника»</a></li>
+				<li><a target="_blank" href="gift_certificates.html">Подарочные сертификаты</a></li>
+				<li><a target="_blank" href="certificate_page.html">Страница сертификата</a></li>
+				<li><a target="_blank" href="types_hunting.html">Виды охоты</a></li>
+				<li><a target="_blank" href="bear_hunting.html">Охота на медведя на овсах</a></li>
+				<li><a target="_blank" href="tours_ru.html">Организация охотничьих туров для россиян</a></li>
+				<li><a target="_blank" href="tours_foreigners.html">Организация охотничьих туров для иностранных граждан</a></li>
+				<li><a target="_blank" href="animal_protection.html">Охрана охотничьих животных</a></li>
+				<li><a target="_blank" href="amateur_sport_hunting.html">Любительская и спортивная охота</a></li>
+				<li><a target="_blank" href="fish_farming.html">Рыбоводное хозяйство</a></li>
+				<li><a target="_blank" href="fishing.html">Рыбалка</a></li>
+				<li><a target="_blank" href="contacts.html">Контакты</a></li>
+				<li><a target="_blank" href="404.html">404</a></li>
+				<li><a target="_blank" href="privacy-policy.html">Политика конфиденциальности</a></li>
+			</ol>
+			<!-- <h2>Попапы:</h2>
+			<ol class="rootpage__list">
+				<li><button data-popup-open="popup-open">Бронирование тура, форма для кнопок</button></li>
+			</ol> -->
+		</div>
+		<div class="rootpage__contacts">
+			<h3>Мои контакты:</h3>
+			<!-- <p>Почта: <a href="mailto:email@gmail.com" target="_blank">email@gmail.com</a></p> -->
+			<p>Телефон: <a href="tel:89506076556">+7 950 607 65 56</a></p>
+			<p>Telegram: <a href="https://t.me/flame152" target="_blank">Владимир</a></p>
+			<p>WhatsApp: <a href="https://wa.me/79506076556" target="_blank">+7 950 607 65 56</a></p>
+			<p>Viber: <a href="https://viber.click/79506076556" target="_blank">+7 950 607 65 56</a></p>
+		</div>
+		<div class="rootpage__website">
+			<p>Мой сайт: <a class="rootpage__website-link" href="https://vladimir-code.ru/" target="_blank">Vladimir-code</a></p>
+		</div>
+		<div class="rootpage__tnx">
+			<h3>Спасибо за заказ!</h3>
+			<p>Рад сотрудничать, обращайтесь ещё!</p>
+			<p>P.S. Будет шикарно если Вы оставите положительный отзыв :)</p>
+		</div>
+	</div>
+</body>
+<style>
+	@charset "UTF-8";
+	@import url('https://fonts.googleapis.com/css2?family=Andika:wght@400;700&display=swap');
+
+	*,
+	*::before,
+	*::after {
+		padding: 0px;
+		margin: 0px;
+		border: 0px;
+		box-sizing: border-box;
+	}
+
+	html,
+	body {
+
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		min-width: 320px;
+		width: 100%;
+		color: #fff;
+
+	}
+
+	body {
+		font-family: 'Andika', sans-serif;
+		font-size: 100%;
+		line-height: 1;
+		font-size: 1.2rem;
+	}
+
+	a {
+		text-decoration: none;
+		color: #ffffff
+	}
+
+	a:visited {
+
+		color: #eeeeee;
+
+	}
+
+
+
+	ul li {
+		list-style: none;
+	}
+
+	img {
+		vertical-align: top;
+	}
+
+
+
+	.rootpage {
+		position: relative;
+		min-height: 100%;
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		background: linear-gradient(164deg, rgb(0, 0, 0) 0%, rgb(43, 43, 43) 100%);
+	}
+
+	@media (max-width: 767px) {
+		.rootpage {
+			padding: 0.9rem 0.4rem;
+		}
+	}
+
+	.rootpage__work {
+		width: 512px;
+		margin: 0px 0px 2.25rem;
+		height: 15rem;
+		overflow-x: auto;
+		animation: work 2s linear 0s;
+	}
+
+	@keyframes work {
+		0% {
+			opacity: 0;
+			height: 0rem;
+		}
+
+		100% {
+			opacity: 1;
+			height: 13rem;
+		}
+	}
+
+	.rootpage__work::-webkit-scrollbar {
+		width: 0.13rem;
+	}
+
+
+	.rootpage__work::-webkit-scrollbar-thumb {
+		border-radius: 50%;
+		-webkit-box-shadow: inset 0 0 16px rgba(0, 217, 255, 0.747);
+	}
+
+	.rootpage__work::-webkit-scrollbar-track {
+		border-radius: 50%;
+		-webkit-box-shadow: inset 0 0 16px rgba(0, 217, 255, 0);
+	}
+
+	h1 {
+		color: #ff4800;
+		font-size: 2.5rem;
+		margin: 0px 0px 2.55rem 0px;
+		animation: title 2s linear 0s;
+	}
+
+	@keyframes title {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@media (max-width: 767px) {
+		h1 {
+			font-size: 1.85rem;
+			margin: 0px 0px 1.25rem 0px;
+		}
+	}
+
+	@media (max-width: 479px) {
+		h1 {
+			font-size: 1.55rem;
+			margin: 0px 0px 1.25rem 0px;
+		}
+	}
+
+	h2 {
+		font-weight: 700;
+		color: #00bddf;
+		;
+		font-size: 1.45rem;
+		margin: 0px 0px 1rem 0px;
+		padding: 0.5rem 1rem 0.5rem 0.3rem;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 20%, rgba(20, 166, 208, 0) 100%);
+	}
+
+	@media (max-width: 767px) {
+		h2 {
+			font-size: 1.125rem;
+			margin: 0px 0px 1rem 0px;
+		}
+	}
+
+	h3 {
+		font-weight: 700;
+		color: #ff4800;
+		text-shadow: 0.04rem 0.04rem 0.04rem #000000;
+		font-size: 1.45rem;
+		margin: 0px 0px 0.5rem 0px;
+		border-radius: 0.3rem;
+	}
+
+	@media (max-width: 767px) {
+		h3 {
+			font-size: 1.125rem;
+			margin: 0px 0px 0.2rem 0px;
+		}
+	}
+
+	.rootpage__website {
+		color: #ffffff;
+		font-size: 1.35rem;
+		line-height: 140%;
+		font-weight: 600;
+		margin-bottom: 2.25rem;
+		animation: website 5s linear 0s;
+	}
+
+	@keyframes website {
+		0% {
+			opacity: 0;
+		}
+
+		85% {
+			opacity: 0;
+
+		}
+
+		87.5% {
+			opacity: 0;
+			margin-left: -5rem;
+		}
+
+		100% {
+			margin-left: 0rem;
+			opacity: 1;
+		}
+	}
+
+	a.rootpage__website-link {
+		color: #00bddf;
+		font-size: 1.35rem;
+		font-weight: 500;
+		animation: link 10s linear infinite;
+	}
+
+	@keyframes link {
+		0% {
+			color: #00bddf;
+		}
+
+		20% {
+			color: #00bddf;
+		}
+
+		50% {
+			color: #ffffff;
+		}
+
+		80% {
+			color: #00bddf;
+		}
+
+		100% {
+			color: #00bddf;
+		}
+	}
+
+	.rootpage__info {
+		line-height: 140%;
+		margin: 0px 0px 1.5rem 0px;
+	}
+
+	.rootpage__list {
+		margin-left: 1.25rem;
+		padding-left: 1rem;
+		line-height: 1.15;
+
+	}
+
+	.rootpage__list:not(:last-child) {
+		margin-bottom: 2.25rem;
+	}
+
+	.rootpage__list li:not(:last-child) {
+		margin: 0px 0px 15px 0px;
+	}
+
+	.rootpage__tnx {
+		animation: tnx 4s linear 0s;
+	}
+
+	@keyframes tnx {
+		0% {
+			opacity: 0;
+		}
+
+		77.999% {
+			opacity: 0;
+		}
+
+		75% {
+			opacity: 0;
+			transform: scale(1);
+		}
+
+		87.5% {
+			transform: scale(1.05);
+		}
+
+		100% {
+			transform: scale(1);
+		}
+	}
+
+	.rootpage__contacts {
+		animation: contacts 3s linear 0s;
+	}
+
+	@keyframes contacts {
+		0% {
+			opacity: 0;
+		}
+
+		77.999% {
+			opacity: 0;
+		}
+
+		75% {
+			opacity: 0;
+			transform: scale(1);
+		}
+
+		87.5% {
+			transform: scale(1.05);
+		}
+
+		100% {
+			transform: scale(1);
+		}
+	}
+
+	.rootpage__tnx,
+	.rootpage__contacts {
+		padding: 1rem 1.5rem;
+		line-height: 1.4;
+		border: 0.15rem solid transparent;
+		-moz-border-image: -moz-linear-gradient(140deg, rgba(7, 237, 245, 0.1) 40%, rgb(0, 186, 219));
+		-webkit-border-image: -webkit-linear-gradient(140deg, rgba(7, 237, 245, 0.1) 40%, rgb(0, 186, 219));
+		border-image: linear-gradient(140deg, rgba(7, 237, 245, 0.1) 40%, rgb(0, 186, 219));
+		border-image-slice: 1;
+
+	}
+
+	.rootpage__tnx:not(:last-child),
+	.rootpage__contacts:not(:last-child) {
+		margin-bottom: 1.5rem;
+	}
+
+	@media (max-width: 767px) {
+
+		.rootpage__contacts {
+			padding: 0.5rem 1rem;
+			line-height: 1.4;
+		}
+
+		.rootpage__tnx {
+			padding: 0.5rem 1rem;
+		}
+	}
+
+	.rootpage__contacts a {
+		color: #00bddf;
+	}
+
+
+	.rootpage__tnx p:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+
+	/* дкор */
+</style>
+
+</html>

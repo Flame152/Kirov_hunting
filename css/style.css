@@ -1,0 +1,5190 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: Jost;
+  font-display: swap;
+  src: url("../fonts/Jost-Medium.woff2") format("woff2"), url("../fonts/Jost-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Raleway;
+  font-display: swap;
+  src: url("../fonts/Raleway-Medium.woff2") format("woff2"), url("../fonts/Raleway-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Raleway;
+  font-display: swap;
+  src: url("../fonts/Raleway-Regular.woff2") format("woff2"), url("../fonts/Raleway-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Raleway;
+  font-display: swap;
+  src: url("../fonts/Raleway-SemiBold.woff2") format("woff2"), url("../fonts/Raleway-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 360px;
+}
+
+body {
+  color: var(--main-color, #51525c);
+  line-height: 1;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "Raleway", sans-serif;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited,
+ins {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+body {
+  background: #f6fef9;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+body.lock,
+body.baguetteBox-open {
+  overflow: hidden;
+  -ms-touch-action: none;
+      touch-action: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+.wrapper > main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.wrapper > * {
+  min-width: 0;
+}
+
+@supports (overflow: clip) {
+  .wrapper {
+    overflow: clip;
+  }
+}
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+
+[class*=__container] {
+  max-width: 72.875rem;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+:root {
+  --bg-color: #ecfdf3;
+  --main-color: #51525c;
+  --black-color: #131316;
+  --white-color: #ffffff;
+  --gray-color: #a0a0ab;
+  --green-color: #00b132;
+  --green-color-hover: #1dd150;
+  --padding-btn: 1rem 2rem;
+  --margin-bottom-h2: clamp(1.625rem, 0.923rem + 2.25vw, 2rem);
+  --border-r-36-26: clamp(1.625rem, 0.455rem + 3.75vw, 2.25rem);
+  --border-r-36: 2.25rem;
+}
+
+/*отключить интерфейс браузеров при наведении на изображения*/
+
+img,
+svg {
+  pointer-events: none;
+}
+
+/*отключить интерфейс браузеров при наведении на изображения - end*/
+
+/*h1*/
+
+.title,
+.h1 {
+  font-family: "Jost", sans-serif;
+  font-size: clamp(1.875rem, -0.232rem + 6.74vw, 3rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.title_black,
+.h1_black {
+  color: var(--black-color);
+}
+
+/*h1 - end*/
+
+/*h2*/
+
+.title-h2,
+.h2,
+.presentation h2 {
+  font-family: "Jost", sans-serif;
+  font-size: clamp(1.5rem, 0.096rem + 4.49vw, 2.25rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--black-color);
+}
+
+.title-h2_white,
+.h2_white {
+  color: var(--white-color);
+}
+
+/*h2 - end*/
+
+/*h3*/
+
+.title-h3,
+.h3 {
+  font-family: "Jost", sans-serif;
+  font-size: clamp(1.25rem, 0.782rem + 1.5vw, 1.5rem);
+  text-transform: uppercase;
+  color: var(--black-color);
+}
+
+.title-h3_white,
+.h3_white {
+  color: var(--white-color);
+}
+
+/*h3 - end*/
+
+/*h4 */
+
+.title-h4,
+.h4,
+.presentation h4 {
+  font-family: "Jost", sans-serif;
+  font-size: clamp(1.125rem, 0.891rem + 0.75vw, 1.25rem);
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--black-color);
+}
+
+.title-h4_white,
+.h4_white {
+  color: var(--white-color);
+}
+
+/*h4 - end*/
+
+/*заголовок h1 58px*/
+
+.page-animal-protection .main-block__title,
+.page-amateur-sport .main-block__title .page-fish-farming .main-block__title {
+  font-size: clamp(1.875rem, 0.093rem + 5.7vw, 3.625rem);
+  line-height: 1.1;
+}
+
+/*заголовок у h1 58px - end*/
+
+/*Список пункт+описание в блоках Местоположение Охотничий тур...*/
+
+.items-description ul li:not(:last-child) {
+  margin-bottom: clamp(1rem, -0.17rem + 3.75vw, 1.625rem);
+}
+
+.items-description ul li :not(:last-child) {
+  margin-bottom: clamp(0.125rem, -0.343rem + 1.5vw, 0.375rem);
+}
+
+.items-description ul li b {
+  font-weight: 500;
+  display: block;
+  font-family: "Jost", sans-serif;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--white-color);
+  margin-bottom: clamp(0.125rem, -0.343rem + 1.5vw, 0.375rem);
+}
+
+.items-description ul li p,
+.items-description ul li {
+  font-weight: 400;
+  color: var(--gray-color);
+}
+
+/*Список пункт+описание в блоках Местоположение Охотничий тур... - end*/
+
+/*список с галкой*/
+
+.list ul li {
+  position: relative;
+  padding-left: 1.9375rem;
+  font-weight: 400;
+}
+
+.list ul li:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+.list ul li::before {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url("../img/icon_common/check_box.svg") center/contain no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*список с галкой - end*/
+
+/*список с точками*/
+
+.page-organization-tours ul li,
+.list-dot ul li {
+  font-weight: 400;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.page-organization-tours ul li::before,
+.list-dot ul li::before {
+  content: "";
+  width: 0.1875rem;
+  height: 0.1875rem;
+  background: var(--main-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 0.625rem;
+  left: 0.625rem;
+}
+
+/*список с точками*/
+
+/*лого*/
+
+.header .logo {
+  position: relative;
+  z-index: 99;
+}
+
+.logo {
+  display: block;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: clamp(11.375rem, 7.747rem + 11.61vw, 13.313rem);
+  height: clamp(2.5rem, 1.681rem + 2.62vw, 2.938rem);
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+/*лого - end*/
+
+/*Кнопки*/
+
+.button {
+  text-align: center;
+  background-color: var(--green-color);
+  padding: var(--padding-btn);
+  color: var(--white-color);
+  font-weight: 500;
+  border-radius: 2rem;
+  display: inline-block;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.button_padding {
+  padding: 1rem 6.9375rem;
+}
+
+.button_full {
+  width: 100%;
+  text-align: center;
+}
+
+.button_transparent {
+  background-color: rgba(0, 0, 0, 0.2);
+  outline: 1px solid var(--bg-color);
+}
+
+.button_white {
+  -webkit-box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+  background-color: var(--white-color);
+  color: var(--black-color);
+}
+
+.button_black {
+  background-color: var(--black-color);
+}
+
+/*Кнопки -end*/
+
+/*Заголовок и черная кнопка*/
+
+.row-title-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.625rem;
+}
+
+.row-title-btn .button {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+/*Заголовок и черная кнопка - end*/
+
+/*параграф*/
+
+.paragraph {
+  font-weight: 400;
+}
+
+.paragraph :not(:last-child) {
+  margin-bottom: 0.9375rem;
+}
+
+/*параграф -end*/
+
+/*ряд ссылки кнопки Подробнее Подарочный сертификат... */
+
+.links-info-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.1875rem;
+}
+
+.links-info-row__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.1875rem;
+}
+
+.links-info-row a,
+.links-info-row button {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+/*ряд ссылки кнопки Подробнее Подарочный сертификат... -end*/
+
+/*кнопка развернуть свернуть*/
+
+.all {
+  display: inline-block;
+  position: relative;
+  padding-right: 1.1875rem;
+  color: var(--black-color);
+}
+
+.all::before {
+  content: "";
+  width: 0.625rem;
+  height: 0.75rem;
+  background: url("../img/icon_common/arrow_bottom.svg") 0 0/contain no-repeat;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translate(0%, -50%);
+      -ms-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+}
+
+.all.active::before {
+  -webkit-transform: translate(0%, -50%) rotate(180deg);
+      -ms-transform: translate(0%, -50%) rotate(180deg);
+          transform: translate(0%, -50%) rotate(180deg);
+}
+
+/*кнопка развернуть свернуть -end*/
+
+/*Подробнее >> */
+
+.more {
+  color: var(--gray-color);
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.more span {
+  margin-right: 0.5rem;
+  padding-bottom: 0.125rem;
+  border-bottom: 1px solid #a0a0ab;
+}
+
+/*Подробнее >> - end*/
+
+/*заголовок параграф(ы) жирный текст row*/
+
+.row-text {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0;
+}
+
+.row-text__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.row-text__title {
+  max-width: 28.125rem;
+  min-width: 18.75rem;
+}
+
+.row-text__paragraphs {
+  max-width: 42rem;
+}
+
+.row-text__paragraphs p:not(:last-child) {
+  margin-bottom: clamp(1rem, -0.712rem + 3.57vw, 1.5rem);
+}
+
+.row-text__paragraphs b {
+  display: inline-block;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--black-color);
+  line-height: 1.2;
+}
+
+.row-text__list {
+  max-width: 42rem;
+}
+
+.row-text a {
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+/*заголовок параграф(ы), жирный текст row - end*/
+
+/*Стоимость уточняйте по телефону*/
+
+.know-price {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0;
+}
+
+.know-price__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1rem;
+}
+
+.know-price__left {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 clamp(21.875rem, -24.845rem + 87.94vw, 29.625rem);
+          flex: 0 1 clamp(21.875rem, -24.845rem + 87.94vw, 29.625rem);
+}
+
+.know-price__right {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 35.8125rem;
+          flex: 0 1 35.8125rem;
+  -webkit-box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+  background: var(--white-color);
+  border-radius: 1.5rem;
+  padding: clamp(1rem, 0.554rem + 1.43vw, 1.438rem) clamp(1rem, 0.491rem + 1.63vw, 1.5rem);
+}
+
+.know-price__contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: clamp(0.5rem, -0.9rem + 4.48vw, 1.875rem);
+}
+
+.know-price__contact a {
+  white-space: nowrap;
+  font-family: "Jost", sans-serif;
+  font-size: clamp(1.25rem, -0.565rem + 3.23vw, 1.5rem);
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--black-color);
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.know-price__info :not(:last-child) {
+  margin-bottom: 0.1875rem;
+}
+
+.know-price__info span {
+  font-size: 0.875rem;
+  color: var(--gray-color);
+  line-height: 1.3;
+}
+
+.know-price__info b {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--black-color);
+}
+
+/*Стоимость уточняйте по телефону - end*/
+
+/*болк с картой*/
+
+.location-map {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0;
+}
+
+.location-map__title {
+  margin-bottom: clamp(1.625rem, 0.341rem + 2.68vw, 2rem);
+}
+
+.location-map__map {
+  max-width: 1166px;
+  height: clamp(11.75rem, 3.439rem + 35.46vw, 20.438rem);
+  border-radius: clamp(1rem, -0.712rem + 3.57vw, 1.5rem);
+  overflow: hidden;
+}
+
+.location-map__map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/*болк с картой - end*/
+
+/*политика, год , разработчик*/
+
+.site-info {
+  display: none;
+  font-weight: 400;
+  font-size: 0.625rem;
+  text-transform: capitalize;
+  color: var(--gray-color);
+  line-height: normal;
+}
+
+.site-info__policy,
+.site-info__copyright,
+.site-info__developer {
+  display: block;
+}
+
+.site-info__policy:not(:last-child),
+.site-info__copyright:not(:last-child),
+.site-info__developer:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+.site-info a.site-info__policy {
+  text-decoration: underline;
+}
+
+.site-info__developer span {
+  color: var(--white-color);
+}
+
+.site-info_row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 1.5rem;
+     -moz-column-gap: 1.5rem;
+          column-gap: 1.5rem;
+  row-gap: 0.75rem;
+}
+
+.site-info.site-info_row .site-info__policy,
+.site-info.site-info_row .site-info__copyright,
+.site-info.site-info_row .site-info__developer {
+  margin: 0;
+}
+
+/*политика, год , разработчик - end*/
+
+/*слайдер кнопки скроллбар*/
+
+.nav-slide-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  gap: 0.9375rem;
+}
+
+/*слайдер кнопки скроллбар*/
+
+/*слайдер кнопки скроллбар*/
+
+.custom-slider-wrapper {
+  position: relative;
+  padding-bottom: clamp(1.438rem, -0.318rem + 5.62vw, 2.375rem);
+}
+
+.navigation-btns-slider {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 6.25rem;
+  height: 2.625rem;
+  position: relative;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  -webkit-box-shadow: 0 0 15px rgb(209, 209, 214);
+          box-shadow: 0 0 15px rgb(209, 209, 214);
+  width: 2.625rem;
+  height: 2.625rem;
+  border-radius: 50%;
+  background-color: var(--white-color);
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: "";
+  width: 1.125rem;
+  height: 0.9375rem;
+  background: url("../img/slider/arrow.svg") 0 0/contain no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-button-next {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  right: 0;
+}
+
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  opacity: 0.6;
+}
+
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  width: 100%;
+  height: 0.125rem;
+  left: 0;
+  border: 1px solid var(--gray-color);
+}
+
+.swiper-scrollbar-drag {
+  border: 6px solid var(--green-color);
+  position: absolute;
+  top: -0.375rem;
+  left: -0.125rem;
+}
+
+/*слайдер кнопки скроллбар - end*/
+
+/*Карточки с видео*/
+
+.cards-video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: clamp(1rem, 0.532rem + 1.5vw, 1.25rem);
+}
+
+.cards-video__card {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  border-radius: 1.5rem;
+  -webkit-box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+  background: var(--white-color);
+}
+
+.cards-video .video-wrapper {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.196%;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.cards-video .video-content,
+.cards-video .video-content,
+.cards-video video,
+.cards-video iframe,
+.cards-video object,
+.cards-video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.cards-video__dody {
+  padding: 1.5rem clamp(1rem, -0.873rem + 5.99vw, 2rem) clamp(1rem, -0.873rem + 5.99vw, 2rem);
+}
+
+.cards-video__title-subtitle {
+  margin-bottom: 1.25rem;
+}
+
+.cards-video__title {
+  margin-bottom: clamp(0.25rem, 0.016rem + 0.75vw, 0.375rem);
+}
+
+.video-wrapper {
+  cursor: pointer;
+}
+
+/*Карточки с видео - end*/
+
+/*кнопка плей для видео*/
+
+.btn-play {
+  pointer-events: none;
+  font-size: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 3.375rem;
+  height: 3.375rem;
+  background: url("../img/icon_common/play.svg") center/contain no-repeat;
+}
+
+.btn-play.btn-play_active {
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+
+/*кнопка плей для видео - end*/
+
+/*карточка заголовок, параграф, список кнопки - end*/
+
+.card-row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.card {
+  -webkit-box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+  background: var(--white-color);
+  border-radius: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100%;
+}
+
+.card__photo {
+  padding-top: 56.195%;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.card__photo img {
+  -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+  -webkit-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+.card__body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1.5rem clamp(1rem, -0.018rem + 3.26vw, 2rem) clamp(1rem, -0.018rem + 3.26vw, 2rem);
+}
+
+.card__info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.card__info:not(:last-child) {
+  margin-bottom: clamp(1.25rem, 0.782rem + 1.5vw, 1.5rem);
+}
+
+.card__title {
+  margin-bottom: clamp(0.375rem, -0.327rem + 2.25vw, 0.75rem);
+}
+
+/*карточка заголовок, параграф, список кнопки - end*/
+
+/*карточка численность дичи*/
+
+.fowl-popula-row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 0.532rem + 1.5vw, 1.25rem);
+}
+
+.fowl-popula {
+  -webkit-box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 1.25rem;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.fowl-popula__photo {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 clamp(6.75rem, 4.76rem + 6.37vw, 7.813rem);
+          flex: 0 0 clamp(6.75rem, 4.76rem + 6.37vw, 7.813rem);
+  border-radius: 8px;
+  height: clamp(6.75rem, 4.76rem + 6.37vw, 7.813rem);
+  overflow: hidden;
+}
+
+.fowl-popula__photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.fowl-popula__info {
+  font-family: "Jost", sans-serif;
+  line-height: 1.2;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.fowl-popula__name {
+  text-align: right;
+  color: #70707b;
+}
+
+.fowl-popula__name span {
+  border-radius: 0.375rem;
+  background: #fafafa;
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+}
+
+.fowl-popula__info-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  gap: 0.3125rem;
+}
+
+.fowl-popula__info-bottom span {
+  color: #a0a0ab;
+}
+
+.fowl-popula__info-bottom b {
+  color: var(--black-color);
+  font-size: clamp(1.25rem, 0.782rem + 1.5vw, 1.5rem);
+  font-weight: 500;
+}
+
+/*карточка численность дичи - end*/
+
+/*карточки с описанием*/
+
+.cards-description {
+  padding: clamp(3.75rem, 1.459rem + 7.33vw, 6rem) 0 clamp(1.875rem, 0.729rem + 3.67vw, 3rem);
+}
+
+.cards-description__card:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.card-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: clamp(1rem, 0.532rem + 1.5vw, 1.25rem);
+}
+
+.card-description:nth-child(even) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.card-description__image {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 23.4375rem;
+  height: 13.25rem;
+  border-radius: clamp(1.625rem, 0.455rem + 3.75vw, 2.25rem);
+  overflow: hidden;
+}
+
+.card-description__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card-description__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: clamp(0.5rem, -0.436rem + 3vw, 1rem) clamp(1rem, -1.341rem + 7.49vw, 2.25rem) 1rem;
+  border-radius: clamp(1.625rem, 0.455rem + 3.75vw, 2.25rem);
+  -webkit-box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+  background: var(--white-color);
+}
+
+.card-description__title {
+  font-family: "Jost", sans-serif;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--black-color);
+  font-weight: 500;
+}
+
+.card-description__title b {
+  font-weight: 500;
+}
+
+.card-description__title:not(:last-child) {
+  margin-bottom: clamp(0.5rem, -0.436rem + 3vw, 1rem);
+}
+
+.card-description__paragraph p:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+/*карточки с описанием - end*/
+
+/*карточка вид охоты описание кнопки  фулл контейнер*/
+
+.fowl-cards {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0;
+}
+
+.fowl-cards__title {
+  margin-bottom: clamp(1.625rem, 0.923rem + 2.25vw, 2rem);
+}
+
+.fowl-cards__column:not(:last-child) {
+  margin-bottom: clamp(1.625rem, 1.243rem + 1.22vw, 2rem);
+}
+
+.fowl-cards__card {
+  border-radius: 2.25rem;
+  padding: clamp(1rem, -0.273rem + 4.07vw, 2.25rem);
+  -webkit-box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+  background: var(--white-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: clamp(1.25rem, 0.295rem + 3.05vw, 2.188rem);
+}
+
+.fowl-cards__card:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+.fowl-cards__left {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 241px;
+  height: 241px;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.fowl-cards__left img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.fowl-cards__capton {
+  margin-bottom: clamp(0.5rem, 0.245rem + 0.81vw, 0.75rem);
+}
+
+.fowl-cards__paragraph:not(:last-child) {
+  margin-bottom: clamp(1rem, 0.491rem + 1.63vw, 1.5rem);
+}
+
+.fowl-cards__info {
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: 1rem;
+     -moz-column-gap: 1rem;
+          column-gap: 1rem;
+  row-gap: clamp(0.5rem, 0.309rem + 0.61vw, 0.688rem);
+}
+
+.fowl-cards__info:not(:last-child) {
+  margin-bottom: clamp(1rem, 0.491rem + 1.63vw, 1.5rem);
+}
+
+.fowl-cards__info br {
+  display: none;
+}
+
+.fowl-cards__info span {
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.fowl-cards__info b {
+  color: var(--black-color);
+  font-weight: 500;
+  margin-right: 0.4375rem;
+}
+
+span.fowl-cards__item-info-bg {
+  font-weight: 500;
+  border-radius: 1rem;
+  padding: 0.25rem 0.5rem;
+  color: var(--black-color);
+  line-height: 1.14286;
+  background-color: var(--bg-color);
+}
+
+/*подарить охоту*/
+
+.give-hunt {
+  padding: clamp(1rem, -0.273rem + 4.07vw, 2.25rem);
+  background-color: var(--green-color);
+  border-radius: 1.5rem;
+}
+
+.give-hunt__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: clamp(0.75rem, 0.241rem + 1.63vw, 1.25rem);
+}
+
+/*подарить охоту - end*/
+
+/*карточка вид охоты описание кнопки  фулл контейнер - end*/
+
+/*аннотация*/
+
+.annotation__row {
+  padding: clamp(1rem, -1.341rem + 7.49vw, 2.25rem);
+  background-color: var(--green-color);
+  border-radius: clamp(1.5rem, 0.096rem + 4.49vw, 2.25rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: clamp(0.5rem, -0.904rem + 4.49vw, 1.25rem);
+}
+
+.annotation__row img {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.annotation__row p {
+  font-size: clamp(1rem, 0.532rem + 1.5vw, 1.25rem);
+  color: var(--white-color);
+  line-height: 1.2;
+}
+
+/*аннотация - end*/
+
+/*хлебные крошки*/
+
+.crumbs {
+  font-weight: 400;
+  color: #d1d1d6;
+  line-height: 1.3;
+  margin-bottom: -1.3125rem;
+  font-size: 0.875rem;
+}
+
+.crumbs_padding-color {
+  padding-top: clamp(1.875rem, 1.641rem + 0.75vw, 2rem);
+  padding-bottom: 0.625rem;
+  margin: 0;
+  color: var(--main-color);
+}
+
+.crumbs__wrapper {
+  max-width: clamp(25rem, -19.453rem + 71.77vw, 34.375rem);
+}
+
+/*хлебные крошки -end*/
+
+/*главный для страниц фото.видео текст*/
+
+.no-webp .main-block{
+  background: url("../img/main_block/bg.jpg") 0 0/cover no-repeat; }
+
+.main-block {
+  padding: 1.875rem 0rem;
+}
+
+.main-block__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 2.5rem;
+     -moz-column-gap: 2.5rem;
+          column-gap: 2.5rem;
+  color: #d1d1d6;
+  font-weight: 400;
+}
+
+.main-block__row b {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  color: var(--white-color);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.main-block__left {
+  padding: clamp(1.625rem, -865.5rem + 1400vw, 2.5rem) 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 34.5625rem;
+          flex: 0 1 34.5625rem;
+}
+
+.main-block__left :not(:last-child) {
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.main-block__logo {
+  width: 9.1875rem;
+  height: 3.375rem;
+  border-radius: 0.5rem;
+  padding: 0.625rem 0.90625rem 0.8125rem 0.90625rem;
+  display: inline-block;
+  background-color: #00a0cf;
+}
+
+.main-block__logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.main-block__title:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.main-block__line {
+  height: 0.0625rem;
+  background-color: #d1d1d6;
+}
+
+.main-block__multimedia {
+  position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 35.8125rem;
+          flex: 0 1 35.8125rem;
+  height: clamp(31.375rem, -3.594rem + 56.46vw, 38.75rem);
+  border-radius: 2.25rem;
+  overflow: hidden;
+}
+
+.main-block__multimedia.video-content,
+.main-block__multimedia img,
+.main-block__multimedia video,
+.main-block__multimedia iframe,
+.main-block__multimedia object,
+.main-block__multimedia embed {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/*главный для страниц фото.видео текст -end*/
+
+/*главный для страниц заголовок изображение*/
+
+.main-title-img {
+  padding: clamp(1rem, 0.289rem + 3.03vw, 2.5rem) 0 clamp(1.875rem, 0.729rem + 3.67vw, 3rem);
+}
+
+.main-title-img__title {
+  margin-bottom: clamp(1.625rem, 0.923rem + 2.25vw, 2rem);
+}
+
+.main-title-img__image {
+  width: 100%;
+  height: clamp(5.875rem, -1.029rem + 29.46vw, 20.438rem);
+  border-radius: clamp(1rem, 0.763rem + 1.01vw, 1.5rem);
+  overflow: hidden;
+}
+
+.main-title-img__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/*главный для страниц заголовок изображение -end*/
+
+/*Короткое описание*/
+
+.short-description {
+  padding-top: clamp(3.75rem, 1.459rem + 7.33vw, 6rem);
+}
+
+.short-description__row {
+  padding: clamp(1.875rem, 1.493rem + 1.22vw, 2.25rem) clamp(1rem, -0.273rem + 4.07vw, 2.25rem);
+  -webkit-box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+  background: var(--white-color);
+  border-radius: clamp(1.625rem, 0.989rem + 2.04vw, 2.25rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: clamp(0.5rem, -0.904rem + 4.49vw, 1.25rem);
+}
+
+.short-description__left {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 26.75rem;
+          flex: 0 0 26.75rem;
+}
+
+.short-description__left :not(:last-child) {
+  margin-bottom: clamp(0.5rem, 0.032rem + 1.5vw, 0.75rem);
+}
+
+.short-description__left p {
+  font-family: "Jost", sans-serif;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--black-color);
+}
+
+.short-description__right {
+  max-width: 39.75rem;
+}
+
+/*Короткое описание -end*/
+
+/*Короткое описание, Примечание:  темный фон*/
+
+.short-description-bg {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0;
+}
+
+.short-description-bg ol {
+  padding-left: 1.4375rem;
+}
+
+.short-description-bg ol li {
+  font-weight: 400;
+  color: #d1d1d6;
+}
+
+.no-webp .short-description-bg__row{
+  background: url("../img/short_description/bg_black.jpg") 17% 0/cover no-repeat; }
+
+.short-description-bg__row {
+  color: var(--white-color);
+  padding: clamp(1.875rem, 1.493rem + 1.22vw, 2.25rem) clamp(1rem, -0.273rem + 4.07vw, 2.25rem);
+  border-radius: clamp(1.625rem, 0.989rem + 2.04vw, 2.25rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: clamp(0.5rem, -0.904rem + 4.49vw, 1.25rem);
+}
+
+.no-webp .short-description-bg__row_position{
+  background: url("../img/short_description/bg_black.jpg") 44% 0/cover no-repeat; }
+
+.short-description-bg__left {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 26.75rem;
+          flex: 0 0 26.75rem;
+}
+
+.short-description-bg__left :not(:last-child) {
+  margin-bottom: clamp(0.5rem, 0.032rem + 1.5vw, 0.75rem);
+}
+
+.short-description-bg__right {
+  max-width: 39.75rem;
+}
+
+.short-description-bg__right p {
+  font-weight: 400;
+  color: #d1d1d6;
+}
+
+.short-description-bg__right p:not(:last-child) {
+  margin-bottom: clamp(0.5rem, 0.032rem + 1.5vw, 0.75rem);
+}
+
+.short-description-bg__right b {
+  display: inline-block;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.short-description-bg__right b:not(:last-child) {
+  margin-bottom: clamp(0.5rem, 0.032rem + 1.5vw, 0.75rem);
+}
+
+/*Короткое описание, Примечание: темный фон -end*/
+
+/*Коммерческое предложение*/
+
+.presentation h2 {
+  margin-bottom: clamp(1.25rem, 0.486rem + 2.44vw, 2rem);
+}
+
+.presentation h4 {
+  margin-bottom: 0.375rem;
+}
+
+.presentation b {
+  display: inline-block;
+  font-weight: 500;
+  color: var(--black-color);
+}
+
+.presentation b:not(:last-child) {
+  margin-bottom: clamp(1rem, 0.745rem + 0.81vw, 1.25rem);
+}
+
+.presentation p,
+.presentation span {
+  font-weight: 400;
+}
+
+.presentation p:not(:last-child) {
+  margin-bottom: clamp(1rem, 0.745rem + 0.81vw, 1.25rem);
+}
+
+.presentation .all {
+  display: none;
+}
+
+/*Коммерческое предложение -end*/
+
+/*отступ у блоков верх/низ*/
+
+.padding-48-96 {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0 clamp(3.75rem, 1.459rem + 7.33vw, 6rem) !important;
+}
+
+.padding-96-48 {
+  padding: clamp(3.75rem, 1.459rem + 7.33vw, 6rem) 0 clamp(1.875rem, 0.729rem + 3.67vw, 3rem) !important;
+}
+
+.padding-96 {
+  padding: clamp(3.75rem, 1.459rem + 7.33vw, 6rem) 0 !important;
+}
+
+.padding-48 {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0 !important;
+}
+
+.padding-0 {
+  padding: 0 !important;
+}
+
+/*отступ у блоков верх/низ -end*/
+
+.header {
+  padding: clamp(0.75rem, 0.241rem + 1.63vw, 1.25rem) 0;
+  background-color: var(--black-color);
+  color: var(--bg-color);
+  position: relative;
+}
+
+.header__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 0.9375rem;
+     -moz-column-gap: 0.9375rem;
+          column-gap: 0.9375rem;
+}
+
+.header__column.active {
+  top: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.menu__list {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-column-gap: clamp(0.5rem, -20.5rem + 32vw, 1.5rem);
+     -moz-column-gap: clamp(0.5rem, -20.5rem + 32vw, 1.5rem);
+          column-gap: clamp(0.5rem, -20.5rem + 32vw, 1.5rem);
+  row-gap: 0.3125rem;
+}
+
+.menu__link,
+.menu__btn {
+  position: relative;
+}
+
+.menu__link::before,
+.menu__btn::before {
+  content: "";
+  width: 0;
+  height: 0.0625rem;
+  background: var(--bg-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu__dropdown {
+  padding: clamp(0.063rem, -1238.688rem + 2000vw, 1.313rem) 0 clamp(0.063rem, -1796.125rem + 2900vw, 1.875rem);
+  background-color: var(--black-color);
+  color: var(--gray-color);
+  width: 100vw;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu__dropdown ::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--black-color);
+  position: absolute;
+  top: 0;
+  left: -100%;
+}
+
+.menu__dropdown.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu__item-dropdown {
+  max-width: clamp(43.75rem, -19.324rem + 101.83vw, 50.688rem);
+}
+
+.menu__item-dropdown:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.menu__item-dropdown a {
+  position: relative;
+}
+
+.menu__item-dropdown a::after {
+  content: "";
+  width: 0;
+  height: 0.0625rem;
+  background: var(--gray-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.icon-menu {
+  display: none;
+}
+
+.footer {
+  padding: clamp(1.875rem, -0.265rem + 4.46vw, 2.5rem) 0;
+  background-color: var(--black-color);
+}
+
+.footer__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 0.9375rem;
+     -moz-column-gap: 0.9375rem;
+          column-gap: 0.9375rem;
+}
+
+.footer__right {
+  padding-top: 0.1875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  gap: 0.625rem;
+}
+
+.footer__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  color: #fff;
+  -webkit-column-gap: clamp(0.5rem, -20.5rem + 32vw, 1.5rem);
+     -moz-column-gap: clamp(0.5rem, -20.5rem + 32vw, 1.5rem);
+          column-gap: clamp(0.5rem, -20.5rem + 32vw, 1.5rem);
+  row-gap: 0.3125rem;
+}
+
+.footer__item-menu a {
+  position: relative;
+}
+
+.footer__item-menu a::after {
+  content: "";
+  width: 0;
+  height: 0.0625rem;
+  background: var(--white-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+/*popup*/
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  overflow-x: auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.popup.popup-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-open .popup__content {
+  opacity: 1;
+}
+
+.popup__wrapper {
+  background: var(--bg-color);
+}
+
+.popup__content {
+  max-width: 72.875rem;
+  min-height: 100vh;
+  background: var(--bg-color);
+  padding: 4.375rem 1.25rem 1.875rem;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  margin: 0 auto;
+  opacity: 0;
+}
+
+.popup__header {
+  padding: 0.75rem 1.25rem;
+  background: var(--black-color);
+  display: none;
+}
+
+.popup__header img {
+  width: 11.375rem;
+  height: 2.5rem;
+}
+
+.popup__title {
+  max-width: 41.6875rem;
+  margin-bottom: clamp(1.625rem, 0.989rem + 2.04vw, 2.25rem);
+  padding-right: clamp(0rem, -1436.25rem + 3000vw, 1.875rem);
+}
+
+.popup__close {
+  width: 1.5625rem;
+  height: 1.5625rem;
+  background: transparent;
+  position: absolute;
+  top: 5.9375rem;
+  right: 2.5rem;
+}
+
+.popup__close::before,
+.popup__close::after {
+  content: "";
+  width: 0.1875rem;
+  height: 1.5625rem;
+  border-radius: 1.25rem;
+  position: absolute;
+  top: 0;
+  right: 50%;
+  background: var(--black-color);
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.popup__close::before {
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.popup__close::after {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.popup .form label {
+  font-weight: 500;
+  color: var(--black-color);
+}
+
+.popup .form input[type=email],
+.popup .form input[type=tel],
+.popup .form input[type=text],
+.popup .form textarea {
+  color: var(--black-color);
+  font-weight: 500;
+  -webkit-box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+  background: var(--white-color);
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.popup .form input[type=email]::-webkit-input-placeholder, .popup .form input[type=tel]::-webkit-input-placeholder, .popup .form input[type=text]::-webkit-input-placeholder, .popup .form textarea::-webkit-input-placeholder {
+  color: #d1d1d6;
+}
+
+.popup .form input[type=email]::-moz-placeholder, .popup .form input[type=tel]::-moz-placeholder, .popup .form input[type=text]::-moz-placeholder, .popup .form textarea::-moz-placeholder {
+  color: #d1d1d6;
+}
+
+.popup .form input[type=email]:-ms-input-placeholder, .popup .form input[type=tel]:-ms-input-placeholder, .popup .form input[type=text]:-ms-input-placeholder, .popup .form textarea:-ms-input-placeholder {
+  color: #d1d1d6;
+}
+
+.popup .form input[type=email]::-ms-input-placeholder, .popup .form input[type=tel]::-ms-input-placeholder, .popup .form input[type=text]::-ms-input-placeholder, .popup .form textarea::-ms-input-placeholder {
+  color: #d1d1d6;
+}
+
+.popup .form input[type=email]::placeholder,
+.popup .form input[type=tel]::placeholder,
+.popup .form input[type=text]::placeholder,
+.popup .form textarea::placeholder {
+  color: #d1d1d6;
+}
+
+.popup .form input[type=email]:focus,
+.popup .form input[type=tel]:focus,
+.popup .form input[type=text]:focus,
+.popup .form textarea:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+.popup .form input[type=email],
+.popup .form input[type=tel],
+.popup .form input[type=text] {
+  padding: 0.625rem 1rem;
+  border-radius: 3.125rem;
+}
+
+.popup .form textarea {
+  padding: 1rem;
+  border-radius: 1.375rem;
+  height: 7.5rem;
+  resize: none;
+}
+
+.popup .form__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: clamp(1rem, 0.364rem + 2.04vw, 1.625rem);
+}
+
+.popup .form__top:not(:last-child) {
+  margin-bottom: clamp(1rem, 0.364rem + 2.04vw, 1.625rem);
+}
+
+.popup .form__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 17.3125rem;
+          flex: 0 1 17.3125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: clamp(0.75rem, 0.495rem + 0.81vw, 1rem);
+}
+
+.popup .form__textarea {
+  max-width: 35.8125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: clamp(0.75rem, 0.495rem + 0.81vw, 1rem);
+}
+
+.popup .form__textarea:not(:last-child) {
+  margin-bottom: clamp(1.625rem, 0.989rem + 2.04vw, 2.25rem);
+}
+
+.popup .form__button {
+  margin-bottom: 1rem;
+}
+
+.popup .form__assent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.625rem;
+}
+
+.popup .form__assent input {
+  cursor: pointer;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 1.125rem;
+          flex: 0 0 1.125rem;
+  height: 0rem;
+}
+
+.popup .form__assent input::before {
+  content: "";
+  width: 1.125rem;
+  height: 1.125rem;
+  background: url("../img/icon_common/checkbox_form.svg") center/0 0 no-repeat;
+  border: 1px solid var(--gray-color);
+  border-radius: 0.1875rem;
+  display: inline-block;
+  -webkit-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.popup .form__assent label {
+  cursor: pointer;
+  font-weight: 400;
+  color: var(--gray-color);
+}
+
+.popup .form__assent input:checked::before {
+  background: url("../img/icon_common/checkbox_form.svg") center/19px 19px no-repeat;
+  border: 1px solid var(--green-color);
+}
+
+/*popup - end*/
+
+/*popup Сертификат в подарок / себе*/
+
+.form__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1.625rem;
+}
+
+.form__left-certificate {
+  max-width: 35.875rem;
+}
+
+.form .form__left-certificate .form__item {
+  max-width: 17.3125rem;
+}
+
+.form .form__left-certificate .form__item:not(:last-child) {
+  margin-bottom: clamp(1rem, 0.364rem + 2.04vw, 1.625rem);
+}
+
+.form .form__left-certificate .form__item.form__item_margin-bottom:not(:last-child) {
+  margin-bottom: clamp(1.625rem, 0.989rem + 2.04vw, 2.25rem);
+}
+
+.form__items-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1rem;
+}
+
+.form__items-row:not(:last-child) {
+  margin-bottom: clamp(1rem, 0.364rem + 2.04vw, 1.625rem);
+}
+
+.form__radios span {
+  display: inline-block;
+  color: #232323;
+  margin-bottom: clamp(0.75rem, 0.495rem + 0.81vw, 1rem);
+}
+
+.form__radios-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.form__radio {
+  -webkit-box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+  background: var(--white-color);
+  border-radius: 3.125rem;
+  padding: 0.5625rem 1rem 0.5625rem 0.625rem;
+}
+
+.form .form__radio input[type=radio] {
+  display: none;
+  cursor: pointer;
+}
+
+.form .form__radio label {
+  cursor: pointer;
+  color: var(--gray-color);
+  padding-left: 1.75rem;
+  position: relative;
+}
+
+.form .form__radio label::before {
+  content: "";
+  width: 1.25rem;
+  height: 1.25rem;
+  background: var(--gray-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  -webkit-transform: translate(0%, -50%);
+      -ms-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.form .form__radio input[type=radio]:checked + label::before {
+  background: var(--white-color);
+  border-radius: 50%;
+  border: 5px solid var(--green-color);
+}
+
+.form .form__radio input[type=radio]:checked + label {
+  color: var(--main-color);
+}
+
+.form.form-active .form__items-row .form__item {
+  display: none;
+}
+
+.form__right-certificate {
+  max-width: 23.4375rem;
+}
+
+.form__sticer {
+  color: var(--white-color);
+  border-radius: 1.5rem;
+  background-color: var(--black-color);
+  padding: clamp(1rem, -0.018rem + 3.26vw, 2rem);
+}
+
+.form__sticer :not(:last-child) {
+  margin-bottom: clamp(0.25rem, -0.259rem + 1.63vw, 0.75rem);
+}
+
+.form__sticer b {
+  font-family: "Jost", sans-serif;
+  font-size: 24px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/*popup Сертификат в подарок / себе */
+
+/*popup спасибо*/
+
+.popup-sent {
+  opacity: 1;
+  visibility: visible;
+  display: none;
+}
+
+.popup-sent__close {
+  position: absolute;
+  top: 4.0625rem;
+  right: 2.5rem;
+}
+
+.popup-sent__close::before {
+  content: "";
+  width: 0.1875rem;
+  height: 1.5625rem;
+  border-radius: 1.25rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--black-color);
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.popup-sent__close::after {
+  content: "";
+  width: 0.1875rem;
+  height: 1.5625rem;
+  border-radius: 1.25rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--black-color);
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.popup-sent .popup__content {
+  opacity: 1;
+}
+
+.popup-sent .popup__title {
+  margin-bottom: 0.75rem;
+}
+
+.popup-sent .popup__subtitle {
+  color: var(--gray-color);
+  padding-right: clamp(0rem, -1436.25rem + 3000vw, 1.875rem);
+}
+
+/*popup спасибо - end*/
+
+/*главный*/
+
+.main {
+  position: relative;
+  overflow: hidden;
+  padding: 13.75rem 0rem clamp(3.438rem, -10.31rem + 43.99vw, 16.938rem);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2)));
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+.main__bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.main__bg img {
+  min-width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main__title {
+  max-width: 62.25rem;
+  text-align: center;
+  margin: 0 auto 1.875rem;
+}
+
+.main__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.25rem;
+}
+
+/*главный - end*/
+
+/*о нас*/
+
+.about {
+  padding: clamp(3.75rem, 1.459rem + 7.33vw, 6rem) 0 clamp(1.875rem, 0.729rem + 3.67vw, 3rem);
+}
+
+.about__title {
+  margin-bottom: clamp(1.625rem, 0.923rem + 2.25vw, 2rem);
+}
+
+.about__caption {
+  margin-bottom: 0.75rem;
+}
+
+.about__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: clamp(1.625rem, -0.014rem + 5.24vw, 2.5rem);
+}
+
+.about__img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 35.8125rem;
+          flex: 0 1 35.8125rem;
+  height: clamp(11.813rem, -2.584rem + 46.07vw, 19.5rem);
+  border-radius: var(--border-r-36-26);
+  overflow: hidden;
+}
+
+.about__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.about__right {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 34.5625rem;
+          flex: 0 1 34.5625rem;
+}
+
+.about__paragraph:not(:last-child) {
+  margin-bottom: clamp(1.625rem, 0.923rem + 2.25vw, 2rem);
+}
+
+/*о нас - end*/
+
+/*Местоположение*/
+
+.location {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0;
+}
+
+.location__title {
+  margin-bottom: clamp(1.625rem, 0.923rem + 2.25vw, 2rem);
+}
+
+.no-webp .location__row{
+  background: -webkit-gradient(linear, left top, right top, from(rgba(19, 19, 22, 0.75)), to(rgba(19, 19, 22, 0.75))), url("../img/location/bg.jpg") 90% 17%/129.5% no-repeat; }
+
+.no-webp .location__row{
+  background: -o-linear-gradient(left, rgba(19, 19, 22, 0.75) 0%, rgba(19, 19, 22, 0.75) 100%), url("../img/location/bg.jpg") 90% 17%/129.5% no-repeat; }
+
+.no-webp .location__row{
+  background: linear-gradient(90deg, rgba(19, 19, 22, 0.75) 0%, rgba(19, 19, 22, 0.75) 100%), url("../img/location/bg.jpg") 90% 17%/129.5% no-repeat; }
+
+.location__row {
+  border-radius: 2.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.location__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 33.3125rem;
+          flex: 0 1 33.3125rem;
+  max-height: 31.5625rem;
+}
+
+.location__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  color: #131316;
+}
+
+.location__items-description {
+  padding: clamp(1.25rem, -0.623rem + 5.99vw, 2.25rem);
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 38.0625rem;
+          flex: 0 1 38.0625rem;
+}
+
+/*Местоположение - end*/
+
+/*Наши преимущества*/
+
+.advantages {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0;
+}
+
+.advantages__container {
+  position: relative;
+}
+
+.advantages__top {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-bottom: var(--margin-bottom-h2);
+}
+
+.advantages__slider {
+  overflow: visible;
+}
+
+.advantages__img-text {
+  overflow: hidden;
+  border-radius: var(--border-r-36-26);
+  position: relative;
+  max-width: 35.8125rem;
+  max-height: 20.125rem;
+}
+
+.advantages__img-text img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.advantages__caption {
+  position: absolute;
+  padding: clamp(1rem, 0.064rem + 3vw, 1.5rem);
+  bottom: 0;
+  left: 0;
+}
+
+/*Наши преимущества - end*/
+
+/*Забронировать тур*/
+
+.no-webp .reservations-tour__bg{
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0.65))), url("../img/form/bg_bear.jpg") 0 53%/cover no-repeat; }
+
+.no-webp .reservations-tour__bg{
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url("../img/form/bg_bear.jpg") 0 53%/cover no-repeat; }
+
+.no-webp .reservations-tour__bg{
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url("../img/form/bg_bear.jpg") 0 53%/cover no-repeat; }
+
+.reservations-tour__bg {
+  padding: clamp(1.875rem, -2.58rem + 14.26vw, 6.25rem) 0;
+}
+
+.reservations-tour__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: clamp(1.25rem, -7.31rem + 17.86vw, 3.75rem);
+     -moz-column-gap: clamp(1.25rem, -7.31rem + 17.86vw, 3.75rem);
+          column-gap: clamp(1.25rem, -7.31rem + 17.86vw, 3.75rem);
+}
+
+.reservations-tour__info {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 27.125rem;
+          flex: 0 1 27.125rem;
+}
+
+.reservations-tour__title-paragraph:not(:last-child) {
+  margin-bottom: clamp(1.625rem, 0.221rem + 4.49vw, 2.375rem);
+}
+
+.reservations-tour__title-paragraph p {
+  font-weight: 400;
+  color: var(--white-color);
+}
+
+.reservations-tour__title {
+  margin-bottom: 0.8125rem;
+}
+
+.reservations-tour__item-info {
+  padding-left: 4.25rem;
+  display: block;
+  position: relative;
+}
+
+.reservations-tour__item-info:not(:last-child) {
+  margin-bottom: clamp(1.188rem, -0.802rem + 6.37vw, 2.25rem);
+}
+
+.reservations-tour__item-info::before {
+  content: "";
+  width: 3.3125rem;
+  height: 3.3125rem;
+  border-radius: 50%;
+  background: url("../img/icon_common/phone.svg") center/cover no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(0%, -50%);
+      -ms-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+}
+
+.reservations-tour__item-info:nth-child(2)::before {
+  background: url("../img/icon_common/time.svg") center/cover no-repeat;
+}
+
+.reservations-tour__item-info:nth-child(3)::before {
+  background: url("../img/icon_common/location.svg") center/cover no-repeat;
+}
+
+.reservations-tour__item-info b {
+  display: block;
+  color: var(--gray-color);
+}
+
+.reservations-tour__item-info span,
+.reservations-tour__item-info address {
+  font-family: "Jost", sans-serif;
+  font-style: normal;
+  text-transform: uppercase;
+  color: var(--white-color);
+}
+
+.reservations-tour__form {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 42rem;
+          flex: 0 1 42rem;
+}
+
+.form-reservations__rows {
+  margin-bottom: clamp(1rem, -0.17rem + 3.75vw, 1.625rem);
+}
+
+.form-reservations__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 1.5rem;
+     -moz-column-gap: 1.5rem;
+          column-gap: 1.5rem;
+  row-gap: clamp(1rem, -0.17rem + 3.75vw, 1.625rem);
+}
+
+.form-reservations__row:not(:last-child) {
+  margin-bottom: clamp(1rem, -0.17rem + 3.75vw, 1.625rem);
+}
+
+.form-reservations input,
+.form-reservations textarea {
+  background: inherit;
+  border: 1px solid var(--gray-color);
+  width: 100%;
+  color: var(--white-color);
+  padding: 1.375rem 2.0625rem;
+}
+
+.form-reservations input::-webkit-input-placeholder, .form-reservations textarea::-webkit-input-placeholder {
+  color: var(--gray-color);
+}
+
+.form-reservations input::-moz-placeholder, .form-reservations textarea::-moz-placeholder {
+  color: var(--gray-color);
+}
+
+.form-reservations input:-ms-input-placeholder, .form-reservations textarea:-ms-input-placeholder {
+  color: var(--gray-color);
+}
+
+.form-reservations input::-ms-input-placeholder, .form-reservations textarea::-ms-input-placeholder {
+  color: var(--gray-color);
+}
+
+.form-reservations input::placeholder,
+.form-reservations textarea::placeholder {
+  color: var(--gray-color);
+}
+
+.form-reservations input:focus,
+.form-reservations textarea:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 5px var(--gray-color);
+          box-shadow: 0 0 5px var(--gray-color);
+}
+
+.form-reservations__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 48.216%;
+          flex: 0 1 48.216%;
+}
+
+.form-reservations__item label {
+  display: block;
+  color: var(--white-color);
+  margin-bottom: 0.5rem;
+}
+
+.form-reservations__item input {
+  border-radius: 3.375rem;
+}
+
+.form-reservations__textarea:not(:last-child) {
+  margin-bottom: clamp(1rem, -0.17rem + 3.75vw, 1.625rem);
+}
+
+.form-reservations__textarea label {
+  display: block;
+  color: var(--white-color);
+  margin-bottom: 0.5rem;
+}
+
+.form-reservations__textarea textarea {
+  border-radius: 1.375rem;
+  height: 9.6875rem;
+  resize: none;
+}
+
+/*Забронировать тур - end*/
+
+/*Охотничьи базы*/
+
+.bases-hunting {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0;
+}
+
+.bases-hunting_padding {
+  padding: clamp(3.75rem, 1.459rem + 7.33vw, 6rem) 0;
+}
+
+.bases-hunting__title {
+  margin-bottom: var(--margin-bottom-h2);
+}
+
+/*Охотничьи базы - end*/
+
+/*Основные виды деятельности*/
+
+.types-activities {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0;
+}
+
+.types-activities__title {
+  margin-bottom: var(--margin-bottom-h2);
+}
+
+.types-activities__cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 0.532rem + 1.5vw, 1.25rem);
+}
+
+.types-activities__image {
+  padding-bottom: 56.266%;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.types-activities__image img {
+  -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+  -webkit-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+
+.types-activities__body {
+  padding: clamp(1rem, 0.532rem + 1.5vw, 1.25rem) 0 0.5rem;
+}
+
+.types-activities__caption:not(:last-child) {
+  margin-bottom: 0.375rem;
+}
+
+/*Основные виды деятельности - end*/
+
+/*Виды охоты*/
+
+.hunting-type {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0;
+}
+
+.hunting-type__top {
+  margin-bottom: var(--margin-bottom-h2);
+}
+
+/*Виды охоты - end*/
+
+/*Отзывы*/
+
+.reviews {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0 0;
+}
+
+.reviews__container {
+  padding: 0;
+  max-width: 75.375rem;
+}
+
+.reviews__top {
+  padding: 0rem 1.25rem;
+}
+
+.reviews__custom-slider-wrapper {
+  padding: 0 0.625rem 1.25rem;
+}
+
+.reviews__slider {
+  padding: clamp(1rem, -766rem + 1600vw, 2rem) 0;
+}
+
+.reviews__slide {
+  padding: 0.625rem;
+}
+
+.reviews__card {
+  border-radius: 1.5rem;
+  padding: clamp(1rem, 0.364rem + 2.04vw, 1.625rem);
+  -webkit-box-shadow: 0px 10px 11px 0 rgba(0, 0, 0, 0.1), 0px -10px 11px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 10px 11px 0 rgba(0, 0, 0, 0.1), 0px -10px 11px 0 rgba(0, 0, 0, 0.1);
+  background: var(--white-color);
+}
+
+.reviews__card-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 0.75rem;
+     -moz-column-gap: 0.75rem;
+          column-gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.reviews__avatar {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.reviews__avatar img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.reviews__user-name {
+  font-family: "Jost", sans-serif;
+  font-size: clamp(1.25rem, 0.782rem + 1.5vw, 1.5rem);
+  text-transform: uppercase;
+  color: var(--black-color);
+}
+
+.reviews__user-name b {
+  font-weight: 500;
+}
+
+.reviews__user-city {
+  border-radius: 1.25rem;
+  display: inline-block;
+  color: var(--black-color);
+  padding: 0.125rem 0.625rem;
+  background: var(--bg-color);
+}
+
+.reviews__text {
+  padding: clamp(1rem, -478.375rem + 1000vw, 1.625rem) clamp(1rem, -190.75rem + 400vw, 1.25rem);
+  background: #fafafa;
+  border-radius: 1.25rem;
+  color: #70707b;
+  position: relative;
+}
+
+.reviews__text::before {
+  content: "";
+  width: 2.9375rem;
+  height: 2.9375rem;
+  background: url("../img/icon_common/reviews.svg") 0 0/contain no-repeat;
+  position: absolute;
+  top: -1.3125rem;
+  right: 1.75rem;
+}
+
+.reviews-scrollbar.swiper-scrollbar.swiper-scrollbar-horizontal {
+  width: calc(100% - 2.25rem);
+  left: 1.25rem;
+}
+
+.reviews-scrollbar {
+  display: none;
+}
+
+/*Отзывы - end*/
+
+/*Фотогалерея - end*/
+
+.gallery {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0;
+}
+
+.gallery__top {
+  margin-bottom: clamp(1.625rem, 0.923rem + 2.25vw, 2rem);
+}
+
+.gallery__custom-slider-wrapper {
+  padding: 0;
+}
+
+.gallery__slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: clamp(1rem, 0.745rem + 0.81vw, 1.25rem);
+}
+
+.gallery__photo {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 2.25rem;
+  padding-bottom: 56.266%;
+}
+
+.gallery__photo img {
+  -webkit-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+  -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+}
+
+.gallery-scrollbar {
+  display: none;
+}
+
+/*Фотогалерея - end*/
+
+/*Подарочные сертификаты*/
+
+.gift-certificate {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0 clamp(3.75rem, 1.459rem + 7.33vw, 6rem);
+}
+
+.gift-certificate__top {
+  margin-bottom: clamp(1.625rem, 0.923rem + 2.25vw, 2rem);
+}
+
+.gift-certificate__cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.gift-certificate__img {
+  padding-bottom: 56.266%;
+}
+
+.gift-certificate__img:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.gift-certificate__img img {
+  border-radius: 1.625rem;
+}
+
+.gift-certificate__text {
+  margin-bottom: 1rem;
+}
+
+.gift-certificate__card-title {
+  margin-bottom: 0.375rem;
+}
+
+.gift-certificate__price {
+  font-family: "Jost", sans-serif;
+  color: var(--black-color);
+  font-size: clamp(1.125rem, 0.891rem + 0.75vw, 1.25rem);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/*Подарочные сертификаты - end*/
+
+/*Охотничий тур включает в себя следующее*/
+
+.hunting-tour {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0;
+}
+
+.no-webp .hunting-tour__row{
+  background: url("../img/hunting_tour/bg.jpg") center/cover no-repeat; }
+
+.hunting-tour__row {
+  padding: clamp(1.875rem, 1.173rem + 2.25vw, 2.25rem) clamp(0.938rem, -1.52rem + 7.87vw, 2.25rem);
+  border-radius: 2.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.hunting-tour__title {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 27.375rem;
+          flex: 0 1 27.375rem;
+}
+
+.hunting-tour__items-description {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 44.25rem;
+          flex: 0 1 44.25rem;
+}
+
+/*Охотничий тур включает в себя следующее - end*/
+
+/*Численность дичи*/
+
+.popula-fowl {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0;
+}
+
+.popula-fowl__title {
+  margin-bottom: var(--margin-bottom-h2);
+}
+
+/*Численность дичи - end*/
+
+/*Апартаменты*/
+
+.apartments,
+.conveniences {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0;
+}
+
+.apartments__title,
+.conveniences__title {
+  margin-bottom: var(--margin-bottom-h2);
+}
+
+/*Апартаменты - end*/
+
+/*сертификат */
+
+.certificate {
+  padding: clamp(1rem, -1.575rem + 8.24vw, 2.375rem) 0 clamp(3.75rem, 1.459rem + 7.33vw, 6rem);
+}
+
+.certificate__title-subtitle:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+.certificate__title-subtitle b {
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.certificate__title {
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+.certificate__image {
+  max-width: 35.625rem;
+  max-height: 20rem;
+  border-radius: 1.625rem;
+  overflow: hidden;
+}
+
+.certificate__image:not(:last-child) {
+  margin-bottom: clamp(1.875rem, 1.173rem + 2.25vw, 2.25rem);
+}
+
+.certificate__image img {
+  width: 100%;
+  height: 100%;
+}
+
+.certificate__body:not(:last-child) {
+  margin-bottom: clamp(1.875rem, 1.173rem + 2.25vw, 2.25rem);
+}
+
+.certificate__body b {
+  font-family: "Jost", sans-serif;
+  text-transform: uppercase;
+}
+
+.certificate__body b:not(:last-child) {
+  margin-bottom: clamp(0.375rem, -0.327rem + 2.25vw, 0.75rem);
+}
+
+.certificate ul {
+  color: var(--black-color);
+}
+
+.certificate ul:not(:last-child) {
+  margin-bottom: clamp(1.875rem, 1.173rem + 2.25vw, 2.25rem);
+}
+
+.certificate ul li:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.certificate b {
+  display: inline-block;
+  color: var(--black-color);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.certificate p {
+  font-weight: 400;
+}
+
+.certificate p:not(:last-child) {
+  margin-bottom: 1.375rem;
+}
+
+/*сертификат -end*/
+
+/*Требования для подготовки к охоте*/
+
+.preparing {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0;
+}
+
+.preparing__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: clamp(1.625rem, 0.734rem + 2.85vw, 2.5rem);
+}
+
+.preparing__row:not(:last-child) {
+  margin-bottom: clamp(1.625rem, 0.225rem + 4.48vw, 3rem);
+}
+
+.preparing__left {
+  max-width: 28.375rem;
+  min-width: 23.125rem;
+}
+
+.preparing__list {
+  overflow: hidden;
+  max-width: 42rem;
+}
+
+.preparing__list ul {
+  position: relative;
+  max-height: 350px;
+  overflow: hidden;
+  -webkit-transition: all 0.6s ease-in-out;
+  -o-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.preparing__list ul:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+.preparing__list ul::before {
+  content: "";
+  width: 100%;
+  height: 2.1875rem;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgb(236, 253, 243)), color-stop(30%, rgb(236, 253, 243)), to(rgba(236, 253, 243, 0)));
+  background: -o-linear-gradient(bottom, rgb(236, 253, 243) 0%, rgb(236, 253, 243) 30%, rgba(236, 253, 243, 0) 100%);
+  background: linear-gradient(0deg, rgb(236, 253, 243) 0%, rgb(236, 253, 243) 30%, rgba(236, 253, 243, 0) 100%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.preparing .list-active ul::before {
+  display: none;
+}
+
+.preparing__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.preparing__info:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.preparing__item-info {
+  padding: 1rem 2rem;
+  background-color: var(--black-color);
+  border-radius: 2rem;
+  color: var(--white-color);
+  font-size: 0.875rem;
+  line-height: 1.3;
+}
+
+.preparing__item-info span {
+  font-weight: 400;
+  color: #d1d1d6;
+}
+
+.preparing__item-info br {
+  display: none;
+}
+
+/*Требования для подготовки к охоте - end*/
+
+/*эффективная охрана животных*/
+
+.animal-welfare {
+  padding: clamp(3.75rem, 1.459rem + 7.33vw, 6rem) 0;
+}
+
+.animal-welfare__image {
+  height: clamp(11.75rem, 1.813rem + 39.75vw, 31.625rem);
+  border-radius: clamp(1.625rem, 0.455rem + 3.75vw, 2.25rem);
+  overflow: hidden;
+}
+
+.animal-welfare__image:not(:last-child) {
+  margin-bottom: clamp(1.625rem, 0.923rem + 2.25vw, 2rem);
+}
+
+.animal-welfare__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.animal-welfare__row-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.animal-welfare__title {
+  max-width: 28.125rem;
+  min-width: 18.75rem;
+}
+
+.animal-welfare__paragraphs {
+  max-width: 42rem;
+  font-weight: 400;
+}
+
+.animal-welfare__paragraphs :not(:last-child) {
+  margin-bottom: 1.375rem;
+}
+
+/*эффективная охрана животных - end*/
+
+/*Карта охотоугодий*/
+
+.hunting-map {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0;
+}
+
+.hunting-map__title {
+  margin-bottom: clamp(1.625rem, 0.923rem + 2.25vw, 2rem);
+}
+
+.hunting-map__image {
+  width: 100%;
+  height: clamp(20.938rem, 10.054rem + 34.83vw, 31.625rem);
+  border-radius: 2.25rem;
+  overflow: hidden;
+}
+
+.hunting-map__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/*Карта охотоугодий - end*/
+
+/*Прейскурант и оплата по QR*/
+
+.price-payment {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0 clamp(3.75rem, 1.459rem + 7.33vw, 6rem);
+}
+
+.price-payment .short-description-bg {
+  padding: 0;
+}
+
+.price-payment .short-description-bg:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+/*Прейскурант и оплата по QR -end*/
+
+/* QR коды*/
+
+.qr-codes__row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.qr-codes__card {
+  padding: clamp(1.25rem, -0.023rem + 4.07vw, 2.5rem);
+  -webkit-box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+  background: var(--white-color);
+  border-radius: 2.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: clamp(0.5rem, -5.513rem + 9.71vw, 2.375rem);
+}
+
+.qr-codes__card ol {
+  font-weight: 400;
+  padding-left: 1.25rem;
+}
+
+.qr-codes__text {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 17.3125rem;
+          flex: 0 1 17.3125rem;
+}
+
+.qr-codes__captin {
+  font-family: "Jost", sans-serif;
+  color: var(--black-color);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.qr-codes__captin:not(:last-child) {
+  margin-bottom: clamp(0.5rem, -1.212rem + 3.57vw, 1rem);
+}
+
+.qr-codes__img-code {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 11.125rem;
+          flex: 0 0 11.125rem;
+  height: 11.125rem;
+}
+
+.qr-codes__img-code img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+/* QR коды - end*/
+
+/* СРОКИ ОХОТЫ в Кировской области*/
+
+.dates-hunting {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0;
+}
+
+.dates-hunting__title {
+  margin-bottom: var(--margin-bottom-h2);
+}
+
+.dates-hunting__columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: clamp(3.125rem, 10vw, 7.5rem);
+     -moz-column-gap: clamp(3.125rem, 10vw, 7.5rem);
+          column-gap: clamp(3.125rem, 10vw, 7.5rem);
+  row-gap: clamp(1rem, 0.532rem + 1.5vw, 1.25rem);
+}
+
+.dates-hunting__lift-col {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 23.375rem;
+          flex: 0 1 23.375rem;
+}
+
+.dates-hunting__right-col {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 42rem;
+          flex: 0 1 42rem;
+}
+
+.download-file {
+  padding: clamp(1rem, 0.427rem + 1.83vw, 1.563rem) clamp(1rem, 0.491rem + 1.63vw, 1.5rem);
+  border-radius: clamp(1rem, 0.064rem + 3vw, 1.5rem);
+  -webkit-box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+  background: var(--white-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 0.625rem;
+     -moz-column-gap: 0.625rem;
+          column-gap: 0.625rem;
+}
+
+.download-file:not(:last-child) {
+  margin-bottom: clamp(1rem, 0.532rem + 1.5vw, 1.25rem);
+}
+
+.download-file__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: clamp(0.5rem, -0.904rem + 4.49vw, 1.25rem);
+  max-width: 27.375rem;
+}
+
+.download-file__image-file {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.download-file__image-file img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.download-file__btn-download {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  position: relative;
+}
+
+.download-file__btn-download::before {
+  content: "";
+  width: 2.25rem;
+  height: 2.25rem;
+  background: url("../img/icon_common/download_file.svg") 0 0 no-repeat;
+  display: inline-block;
+}
+
+/* СРОКИ ОХОТЫ в Кировской области*/
+
+/* СРОКИ ОХОТЫ в Кировской области*/
+
+.price-payment .price:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+/*Прейскурант*/
+
+.price__title-subtitle {
+  margin-bottom: var(--margin-bottom-h2);
+}
+
+.price table {
+  border-spacing: 0px;
+  text-align: right;
+}
+
+.price table thead {
+  border-radius: 0.375rem;
+  -webkit-box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 44px 0 rgba(0, 0, 0, 0.1);
+  background: #00b132;
+}
+
+.price table thead tr th:first-child {
+  border-radius: 0.375rem 0 0 0.375rem;
+}
+
+.price table thead tr th:last-child {
+  border-radius: 0 0.375rem 0.375rem 0;
+}
+
+.price table th {
+  font-weight: 500;
+  vertical-align: text-top;
+  padding: 0.875rem 0.75rem;
+  color: var(--white-color);
+}
+
+.price table th:nth-child(5) {
+  width: 23.4375rem;
+  padding-right: clamp(1.875rem, -8.794rem + 17.22vw, 4.125rem);
+}
+
+.price table th:nth-child(1),
+.price table td:nth-child(1) {
+  text-align: left;
+  width: 1.6875rem;
+}
+
+.price table th:nth-child(2),
+.price table td:nth-child(2) {
+  width: 20.75rem;
+  text-align: left;
+}
+
+.price table th:nth-child(3),
+.price table td:nth-child(3) {
+  width: 12.625rem;
+}
+
+.price table th:nth-child(4),
+.price table td:nth-child(4) {
+  width: 12.625rem;
+}
+
+.price table td {
+  border-bottom: 1px solid #d1d1d6;
+  padding: 0.625rem 0.75rem;
+  vertical-align: text-top;
+}
+
+.price table td:nth-child(1),
+.price table td:nth-child(3),
+.price table td:nth-child(4),
+.price table td:nth-child(6) {
+  font-family: "Jost", sans-serif;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--black-color);
+}
+
+.price table td:nth-child(5) {
+  width: 11.125rem;
+}
+
+.price table td:nth-child(6) {
+  width: 11.125rem;
+  padding-right: clamp(1.875rem, -8.794rem + 17.22vw, 4.125rem);
+}
+
+.price .download-file {
+  display: none;
+}
+
+/*Прейскурант -end*/
+
+/* СРОКИ ОХОТЫ в Кировской области*/
+
+.products-fish__cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 0.532rem + 1.5vw, 1.25rem);
+  margin-bottom: 2.125rem;
+}
+
+.products-fish__card {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 49.1%;
+          flex: 0 1 49.1%;
+}
+
+.fish-products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: clamp(1rem, -0.527rem + 4.89vw, 2.5rem);
+  border-radius: clamp(1rem, -0.273rem + 4.07vw, 2.25rem);
+  min-height: 15.625rem;
+}
+
+.no-webp .fish-products:nth-child(1){
+  background: url("../img/fish_farming/young_fish.jpg") 0 0/cover no-repeat; }
+
+.no-webp .fish-products:nth-child(2){
+  background: url("../img/fish_farming/carp.jpg") center/cover no-repeat; }
+
+.fish-products__top {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.fish-products__top:not(:last-child) {
+  margin-bottom: clamp(2rem, 1.682rem + 1.02vw, 2.313rem);
+}
+
+.fish-products__paragraph {
+  color: #d1d1d6;
+}
+
+.fish-products__price {
+  color: #d1d1d6;
+  font-weight: 400;
+}
+
+.fish-products__price ins {
+  font-family: "Jost", sans-serif;
+  color: var(--white-color);
+  font-weight: 500;
+  font-size: 2.25rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/*страница Рыбалка */
+
+.page-fishing .main-block__title {
+  margin-bottom: 1.25rem;
+}
+
+.page-fishing .short-description-bg,
+.page-fishing .short-description {
+  padding: 0;
+}
+
+.page-fishing .short-description-bg:not(:last-child),
+.page-fishing .short-description:not(:last-child) {
+  margin-bottom: clamp(1.625rem, 0.923rem + 2.25vw, 2rem);
+}
+
+.page-fishing .fishing-video:not(:last-child) {
+  margin-bottom: clamp(1.625rem, 0.923rem + 2.25vw, 2rem);
+}
+
+.fishing-place__title {
+  margin-bottom: clamp(1.625rem, 0.923rem + 2.25vw, 2rem);
+}
+
+/* большое видео*/
+
+.fishing-video__wrapper {
+  width: 100%;
+  height: clamp(22.625rem, 5.771rem + 53.93vw, 31.625rem);
+  position: relative;
+  border-radius: 2.25rem;
+  overflow: hidden;
+}
+
+.fishing-video__video,
+.fishing-video iframe {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+/* большое видео -end*/
+
+/* Какая рыба водится*/
+
+.types-fish {
+  padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0 clamp(0.625rem, -0.521rem + 3.67vw, 1.75rem);
+}
+
+.types-fish__container {
+  max-width: 75.375rem;
+  padding: 0;
+}
+
+.types-fish__top {
+  margin: 0 auto clamp(0.375rem, -0.007rem + 1.22vw, 0.75rem);
+  padding: 0 1.25rem;
+}
+
+.types-fish__title {
+  font-size: 1.5rem;
+}
+
+.types-fish__custom-slider-wrapper {
+  padding: 0 0.625rem;
+}
+
+.types-fish__slider {
+  padding: 1.25rem 0.625rem;
+}
+
+.types-fish__slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.types-fish__card {
+  -webkit-box-shadow: 0px 10px 11px 0 rgba(0, 0, 0, 0.1), 0px -10px 11px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 10px 11px 0 rgba(0, 0, 0, 0.1), 0px -10px 11px 0 rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  background: var(--white-color);
+  border-radius: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 1.25rem;
+     -moz-column-gap: 1.25rem;
+          column-gap: 1.25rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 20.9375rem;
+          flex: 0 1 20.9375rem;
+}
+
+.types-fish__image {
+  border-radius: 0.5rem;
+  width: 7.8125rem;
+  height: 7.8125rem;
+  overflow: hidden;
+}
+
+.types-fish__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.types-fish__name {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--black-color);
+}
+
+.types-fish__name b {
+  font-weight: 500;
+}
+
+/* Какая рыба водится -end*/
+
+/*страница Рыбалка  -end*/
+
+.ymaps-2-1-79-controls-pane,
+.ymaps-2-1-79-gototech,
+.ymaps-2-1-79-copyright__content {
+  display: none;
+  opacity: 0;
+}
+
+/*страница контакты*/
+
+.page-contacts .location-map {
+  padding: clamp(1rem, -0.527rem + 4.89vw, 2.5rem) 0rem clamp(0.813rem, 0.112rem + 2.24vw, 1.5rem);
+}
+
+.page-contacts .location-map__button {
+  display: none;
+}
+
+/*Контакты*/
+
+.contacts {
+  padding: clamp(0.813rem, 0.112rem + 2.24vw, 1.5rem) 0 clamp(3.75rem, 1.459rem + 7.33vw, 6rem);
+}
+
+.contacts__title {
+  margin-bottom: 1.4375rem;
+}
+
+.contacts__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: clamp(2.5rem, -42.959rem + 73.39vw, 7.5rem);
+     -moz-column-gap: clamp(2.5rem, -42.959rem + 73.39vw, 7.5rem);
+          column-gap: clamp(2.5rem, -42.959rem + 73.39vw, 7.5rem);
+  row-gap: 1.625rem;
+}
+
+.contacts__info {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 29.5rem;
+          flex: 0 0 29.5rem;
+}
+
+.contacts__item-info {
+  padding-left: 4.25rem;
+  display: block;
+  position: relative;
+}
+
+.contacts__item-info:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+.contacts__item-info::before {
+  content: "";
+  width: 3.25rem;
+  height: 3.25rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.contacts__item-info:nth-child(1)::before {
+  background: url("../img/icon_common/location.svg") center/cover no-repeat;
+}
+
+.contacts__item-info:nth-child(2)::before,
+.contacts__item-info:nth-child(3)::before {
+  background: url("../img/icon_common/phone.svg") center/cover no-repeat;
+}
+
+.contacts__item-info:nth-child(4)::before {
+  background: url("../img/icon_common/time.svg") center/cover no-repeat;
+}
+
+.contacts__item-info:nth-child(5)::before {
+  background: url("../img/icon_common/mail.svg") center/cover no-repeat;
+}
+
+.contacts__item-info span {
+  display: block;
+  font-weight: 400;
+}
+
+.contacts__item-info span:not(:last-child) {
+  margin-bottom: 0.3125rem;
+}
+
+.contacts__item-info address,
+.contacts__item-info b,
+.contacts__item-info a {
+  display: inline-block;
+  font-style: normal;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: clamp(1rem, 0.745rem + 0.81vw, 1.25rem);
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--black-color);
+}
+
+.contacts__item-info address:not(:last-child),
+.contacts__item-info b:not(:last-child),
+.contacts__item-info a:not(:last-child) {
+  margin-bottom: 0.3125rem;
+}
+
+.contacts__item-info a {
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.contacts__item-info a:hover {
+  color: var(--main-color);
+}
+
+.contacts__requisites {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 29.625rem;
+          flex: 0 1 29.625rem;
+}
+
+.contacts__requisites b {
+  display: block;
+  font-weight: 500;
+  color: var(--black-color);
+  margin-bottom: 0.5rem;
+}
+
+.contacts__requisites p {
+  font-weight: 400;
+}
+
+/*Контакты- end*/
+
+/*страница контакты - end*/
+
+/*страница 404*/
+
+.no-webp .page-error-404{
+  background: url("../img/error_404/bg.jpg") center/cover no-repeat; }
+
+.page-error-404 .crumbs {
+  color: var(--white-color);
+}
+
+.error-404 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 6.875rem 0rem 11.0625rem;
+}
+
+.error-404__content {
+  color: var(--white-color);
+  text-align: center;
+}
+
+.error-404__title {
+  font-family: "Jost", sans-serif;
+  font-size: clamp(5.375rem, -1.881rem + 23.22vw, 12.5rem);
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+}
+
+.error-404__subtitle:not(:last-child) {
+  margin-bottom: clamp(2.25rem, 1.995rem + 0.81vw, 2.5rem);
+}
+
+/*страница 404 - end*/
+
+/*страница Политика конфиденциальности*/
+
+.privacy-policy {
+  padding: clamp(1rem, -0.4rem + 4.48vw, 2.375rem) 0 clamp(3.75rem, 1.459rem + 7.33vw, 6rem);
+  /* 1-й уровень */
+  /* 2-й уровень */
+}
+
+.privacy-policy__title {
+  margin-bottom: 2rem;
+}
+
+.privacy-policy p {
+  font-weight: 400;
+}
+
+.privacy-policy ol {
+  font-weight: 400;
+  list-style: none;
+  counter-reset: num;
+}
+
+.privacy-policy ol > li {
+  counter-increment: num;
+}
+
+.privacy-policy ol > li::before {
+  content: counter(num) ".";
+}
+
+.privacy-policy ol ol {
+  counter-reset: num2;
+}
+
+.privacy-policy ol ol > li {
+  counter-increment: num2;
+}
+
+.privacy-policy ol ol > li::before {
+  content: counter(num) "." counter(num2) ".";
+}
+
+.privacy-policy ul li {
+  font-weight: 400;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.privacy-policy ul li::before {
+  content: "";
+  width: 0.1875rem;
+  height: 0.1875rem;
+  background: var(--main-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 0.5625rem;
+  left: 0.625rem;
+}
+
+.privacy-policy a {
+  font-weight: 400;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+/*страница Политика конфиденциальности - end*/
+
+@media (min-width: 131.25em) {
+  .main {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 75em) {
+  .types-fish__card {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+}
+
+@media (max-width: 70em) {
+  .fowl-popula-row {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 61.99875em) {
+  .row-text__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .row-text__title {
+    max-width: 100%;
+  }
+
+  .row-text__paragraphs {
+    max-width: 100%;
+  }
+
+  .row-text__list {
+    max-width: 100%;
+  }
+
+  .site-info {
+    display: block;
+  }
+
+  .fowl-cards__card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .fowl-cards__left {
+    width: 142px;
+    height: 142px;
+  }
+
+  .crumbs {
+    margin: 0;
+  }
+
+  .crumbs__wrapper {
+    max-width: 100%;
+  }
+
+  .main-block {
+    padding: 1.875rem 0 3.75rem;
+  }
+
+  .main-block__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .main-block__left {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+
+  .main-block__multimedia {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    height: clamp(21.656rem, -0.099rem + 99.45vw, 38.75rem);
+    max-width: 35.8125rem;
+  }
+
+  .main-block .button {
+    display: none;
+  }
+
+  .short-description__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .short-description__left {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+
+  .short-description__right {
+    max-width: 100%;
+  }
+
+  .no-webp .short-description-bg__row{
+    background: url("../img/short_description/bg_black.jpg") 17% 0/cover no-repeat; }
+
+  .short-description-bg__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .no-webp .short-description-bg__row_position{
+    background: url("../img/short_description/bg_black.jpg") 76.3% 0/cover no-repeat; }
+
+  .short-description-bg__left {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+
+  .short-description-bg__right {
+    max-width: 100%;
+  }
+
+  .header__column {
+    padding: 5.625rem 1.25rem 2.5rem;
+    position: fixed;
+    top: -100%;
+    right: -100%;
+    z-index: 97;
+    max-width: 500px;
+    height: 100%;
+    background-color: var(--black-color);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menu__body {
+    opacity: 0;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    margin-bottom: 3.125rem;
+  }
+
+  .menu__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1.25rem;
+  }
+
+  .menu__dropdown {
+    width: 100%;
+    position: relative;
+    height: 0;
+  }
+
+  .menu__dropdown ::before {
+    display: none;
+  }
+
+  .menu__dropdown.show {
+    padding-top: 0.75rem;
+    height: auto;
+  }
+
+  .icon-menu {
+    display: block;
+    position: relative;
+    width: 1.875rem;
+    height: 1.125rem;
+    cursor: pointer;
+    z-index: 98;
+  }
+
+  .icon-menu span,
+  .icon-menu::before,
+  .icon-menu::after {
+    content: "";
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 0.125rem;
+    background-color: var(--white-color);
+    border-radius: 0.625rem;
+  }
+
+  .icon-menu::before {
+    top: 0;
+  }
+
+  .icon-menu::after {
+    bottom: 0;
+  }
+
+  .icon-menu span {
+    top: calc(50% - 0.0625rem);
+  }
+
+  .icon-menu.menu-open span {
+    width: 0;
+  }
+
+  .icon-menu.menu-open::before,
+  .icon-menu.menu-open::after {
+    height: 0.1875rem;
+  }
+
+  .icon-menu.menu-open::before {
+    top: calc(50% - 0.125rem);
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+
+  .icon-menu.menu-open::after {
+    bottom: calc(50% - 0.0625rem);
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+
+  .header__column .site-info {
+    opacity: 0;
+  }
+
+  .header__column.active .menu__body,
+  .header__column.active .site-info {
+    opacity: 1;
+    -webkit-transition: all 0.3s ease-in-out 0.5s;
+    -o-transition: all 0.3s ease-in-out 0.5s;
+    transition: all 0.3s ease-in-out 0.5s;
+  }
+
+  .footer__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 1.625rem;
+  }
+
+  .footer__right {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .popup__content {
+    padding: 1.875rem 1.25rem 1.875rem;
+  }
+
+  .popup__header {
+    display: block;
+  }
+
+  .popup__close {
+    top: -2.8125rem;
+    right: 1.25rem;
+  }
+
+  .popup__close::before,
+  .popup__close::after {
+    background: var(--white-color);
+  }
+
+  .form__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+
+  .popup-sent__close {
+    top: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .main__bg {
+    top: -10%;
+    -webkit-transform: scale(1.4);
+        -ms-transform: scale(1.4);
+            transform: scale(1.4);
+  }
+
+  .about__row {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .about__img {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+
+  .about__right {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+
+  .no-webp .location__row{
+    background: -webkit-gradient(linear, left top, right top, from(rgba(19, 19, 22, 0.75)), to(rgba(19, 19, 22, 0.75))), url("../img/location/bg.jpg") 43% -224%/cover no-repeat; }
+
+  .no-webp .location__row{
+    background: -o-linear-gradient(left, rgba(19, 19, 22, 0.75) 0%, rgba(19, 19, 22, 0.75) 100%), url("../img/location/bg.jpg") 43% -224%/cover no-repeat; }
+
+  .no-webp .location__row{
+    background: linear-gradient(90deg, rgba(19, 19, 22, 0.75) 0%, rgba(19, 19, 22, 0.75) 100%), url("../img/location/bg.jpg") 43% -224%/cover no-repeat; }
+
+  .location__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .location__image {
+    margin-top: 1.25rem;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    max-width: 31.25rem;
+  }
+
+  .location__items-description {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .no-webp .reservations-tour__bg{
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0.65))), url("../img/form/bg_bear.jpg") 30% 53%/cover no-repeat; }
+
+  .no-webp .reservations-tour__bg{
+    background: -o-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url("../img/form/bg_bear.jpg") 30% 53%/cover no-repeat; }
+
+  .no-webp .reservations-tour__bg{
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url("../img/form/bg_bear.jpg") 30% 53%/cover no-repeat; }
+
+  .reservations-tour__info {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25rem;
+            flex: 0 0 25rem;
+  }
+
+  .form-reservations__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .types-activities__cards {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reviews {
+    padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0;
+  }
+
+  .reviews-scrollbar {
+    display: block;
+  }
+
+  .gallery__custom-slider-wrapper {
+    padding-bottom: clamp(1.438rem, -0.318rem + 5.62vw, 2.375rem);
+  }
+
+  .gallery-scrollbar {
+    display: block;
+  }
+
+  .gift-certificate__cards {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .no-webp .hunting-tour__row{
+    background: url("../img/hunting_tour/bg.jpg") left center/cover no-repeat; }
+
+  .hunting-tour__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .hunting-tour__title {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+
+  .hunting-tour__items-description {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+
+  .preparing__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .preparing__left {
+    max-width: 100%;
+  }
+
+  .preparing__list {
+    max-width: 100%;
+  }
+
+  .animal-welfare__row-text {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .animal-welfare__title {
+    max-width: 100%;
+  }
+
+  .animal-welfare__paragraphs {
+    max-width: 100%;
+  }
+
+  .qr-codes__card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .qr-codes__text {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+
+  .qr-codes__img-code {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+
+  .dates-hunting__columns {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .dates-hunting__lift-col {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+
+  .dates-hunting__right-col {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+
+  .price table {
+    display: none;
+  }
+
+  .price .download-file {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .types-fish__slide {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .types-fish__card {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 53.125em) {
+  .know-price__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .know-price__left {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+
+  .know-price__right {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+
+  .card-description:nth-child(even) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .card-description {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .card-description__image {
+    width: 100%;
+    height: clamp(11.813rem, -2.584rem + 46.07vw, 19.5rem);
+  }
+}
+
+@media (max-width: 53.75em) {
+  .contacts__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+
+  .contacts__info {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+
+  .contacts__requisites {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 51.875em) {
+  .products-fish__cards {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 47.99875em) {
+  .row-title-btn .button {
+    width: unset;
+  }
+
+  .row-text__paragraphs b:not(:last-child) {
+    margin-bottom: 0.9375rem;
+  }
+
+  .site-info.site-info_row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .swiper-scrollbar-drag {
+    top: -0.1875rem;
+    border: 3px solid var(--green-color);
+  }
+
+  .cards-video {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .cards-video__card {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+
+  .cards-video .video-wrapper {
+    border-radius: 1.625rem;
+  }
+
+  .card-row {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    gap: 1.625rem;
+  }
+
+  .fowl-popula-row {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .annotation__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .annotation__row p {
+    line-height: 1.4;
+  }
+
+  .presentation ul:not(:last-child) {
+    margin-bottom: 1.25rem;
+  }
+
+  .footer__right {
+    row-gap: 1.625rem;
+  }
+
+  .footer__menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .form__sticer {
+    border-radius: 1.625rem;
+  }
+
+  .advantages__img-text {
+    max-width: 100%;
+  }
+
+  .reservations-tour__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 2.25rem;
+  }
+
+  .reservations-tour__info {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+
+  .reservations-tour__form {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+
+  .types-activities__image {
+    border-radius: 1.625rem;
+  }
+
+  .reviews__slider {
+    overflow: visible;
+    padding: clamp(1rem, -766rem + 1600vw, 2rem) 0 0;
+  }
+
+  .reviews__slide {
+    padding: 0.625rem 0.375rem;
+  }
+
+  .reviews__avatar {
+    width: 4.25rem;
+    height: 4.25rem;
+  }
+
+  .reviews__text::before {
+    top: -1.625rem;
+  }
+
+  .gallery__slider {
+    overflow: visible;
+  }
+
+  .no-webp .hunting-tour__row{
+    background: url("../img/hunting_tour/bg.jpg") 20% center/cover no-repeat; }
+
+  .preparing__list ul {
+    max-height: 308px;
+  }
+
+  .price-payment .short-description-bg:not(:last-child) {
+    margin-bottom: 3.75rem;
+  }
+
+  .qr-codes__row {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .download-file__left {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .download-file__name {
+    padding-top: 0.4375rem;
+  }
+
+  .price-payment .price:not(:last-child) {
+    margin-bottom: 3.75rem;
+  }
+
+  .page-contacts .location-map__map {
+    margin-bottom: 1.625rem;
+  }
+
+  .page-contacts .location-map__button {
+    display: inline-block;
+    width: unset;
+  }
+
+  .contacts__title {
+    margin-bottom: 1.625rem;
+  }
+}
+
+@media (max-width: 40.625em) {
+  .types-fish__custom-slider-wrapper {
+    padding: 0;
+  }
+
+  .types-fish__slider {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .know-price__left {
+    width: 100%;
+  }
+
+  .know-price__right {
+    width: 100%;
+  }
+
+  .know-price__contact {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .gift-certificate__cards {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 36.25em) {
+  .preparing__item-info br {
+    display: block;
+  }
+}
+
+@media (max-width: 34.375em) {
+  .types-activities__cards {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 29.99875em) {
+  [class*=__container] {
+    padding: 0 1.25rem;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .links-info-row__btns {
+    width: 100%;
+  }
+
+  .know-price__contact {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .fowl-cards__info br {
+    display: block;
+  }
+
+  .give-hunt__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .presentation .list-dot {
+    overflow: hidden;
+  }
+
+  .presentation ul {
+    position: relative;
+    max-height: 10.9375rem;
+    overflow: hidden;
+    -webkit-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+  }
+
+  .presentation .list-dot ul::before {
+    content: "";
+    width: 100%;
+    height: 2.1875rem;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgb(236, 253, 243)), color-stop(5%, rgb(236, 253, 243)), to(rgba(236, 253, 243, 0.3)));
+    background: -o-linear-gradient(bottom, rgb(236, 253, 243) 0%, rgb(236, 253, 243) 5%, rgba(236, 253, 243, 0.3) 100%);
+    background: linear-gradient(0deg, rgb(236, 253, 243) 0%, rgb(236, 253, 243) 5%, rgba(236, 253, 243, 0.3) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .presentation .list-dot.list-active ul::before {
+    display: none;
+  }
+
+  .presentation .all {
+    display: inline-block;
+  }
+
+  .popup .form__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+
+  .form .form__left-certificate .form__item {
+    max-width: 100%;
+  }
+
+  .main {
+    padding: clamp(24.375rem, -34.125rem + 260vw, 26.813rem) 0rem 3.4375rem;
+  }
+
+  .main__bg {
+    top: -10%;
+    left: -67%;
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+
+  .main__title {
+    margin: 0 auto 2.25rem;
+  }
+
+  .no-webp .reservations-tour__bg{
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0.65))), url("../img/form/bg_bear.jpg") 33.8% 58%/540% no-repeat; }
+
+  .no-webp .reservations-tour__bg{
+    background: -o-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url("../img/form/bg_bear.jpg") 33.8% 58%/540% no-repeat; }
+
+  .no-webp .reservations-tour__bg{
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url("../img/form/bg_bear.jpg") 33.8% 58%/540% no-repeat; }
+
+  .reviews__container {
+    padding: 0;
+  }
+
+  .preparing__item-info_padding {
+    padding: 1rem 1.125rem;
+  }
+
+  .error-404 {
+    padding: 6.875rem 0rem 20.1875rem;
+  }
+}
+
+@media (max-width: 23.75em) {
+  .main__bg {
+    left: -77%;
+  }
+}
+
+@media (pointer: fine) {
+  body.baguetteBox-open {
+    margin-right: 1.0625rem;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    background-color: var(--green-color-hover);
+  }
+
+  .button_transparent:hover {
+    outline: none;
+  }
+
+  .more:hover {
+    color: #7f7f8b;
+  }
+
+  .row-text a:hover {
+    color: var(--main-color);
+    text-decoration: underline;
+  }
+
+  .know-price__contact a:hover {
+    color: var(--main-color);
+    text-decoration: underline;
+  }
+
+  .swiper-button-prev:hover::after,
+  .swiper-button-next:hover::after {
+    -webkit-filter: invert(58%) sepia(91%) saturate(412%) hue-rotate(85deg) brightness(92%) contrast(98%);
+            filter: invert(58%) sepia(91%) saturate(412%) hue-rotate(85deg) brightness(92%) contrast(98%);
+  }
+
+  .card:hover .card__photo img {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+            transform: scale3d(1.05, 1.05, 1.05);
+    will-change: transform;
+  }
+
+  .crumbs a:hover {
+    text-decoration: underline;
+  }
+
+  .menu__link:hover::before,
+  .menu__btn:hover::before {
+    width: 100%;
+  }
+
+  .menu .menu__dropdown-items:hover .menu__dropdown {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .menu__item-dropdown a:hover::after {
+    width: 100%;
+  }
+
+  .footer__item-menu a:hover::after {
+    width: 100%;
+  }
+
+  .popup__close:hover::before,
+  .popup__close:hover::after {
+    background: var(--green-color-hover);
+  }
+
+  .popup-sent__close:hover::before,
+  .popup-sent__close:hover::after {
+    background: var(--green-color-hover);
+  }
+
+  .types-activities__card:hover .types-activities__image img {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+            transform: scale3d(1.05, 1.05, 1.05);
+    will-change: transform;
+  }
+
+  .gallery__photo:hover img {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+            transform: scale3d(1.1, 1.1, 1.1);
+    will-change: transform;
+  }
+
+  .privacy-policy a:hover {
+    text-decoration: underline;
+    color: var(--black-color);
+  }
+}
+
+.webp .main-block{ background: url(../img/main_block/bg.webp) 0 0/cover no-repeat; }
+
+.webp .short-description-bg__row{ background: url(../img/short_description/bg_black.webp) 17% 0/cover no-repeat; }
+
+.webp .short-description-bg__row_position{ background: url(../img/short_description/bg_black.webp) 44% 0/cover no-repeat; }
+
+.webp .location__row{ background: -webkit-gradient(linear, left top, right top, from(rgba(19, 19, 22, 0.75)), to(rgba(19, 19, 22, 0.75))), url(../img/location/bg.webp) 90% 17%/129.5% no-repeat; }
+
+.webp .location__row{ background: -o-linear-gradient(left, rgba(19, 19, 22, 0.75) 0%, rgba(19, 19, 22, 0.75) 100%), url(../img/location/bg.webp) 90% 17%/129.5% no-repeat; }
+
+.webp .location__row{ background: linear-gradient(90deg, rgba(19, 19, 22, 0.75) 0%, rgba(19, 19, 22, 0.75) 100%), url(../img/location/bg.webp) 90% 17%/129.5% no-repeat; }
+
+.webp .reservations-tour__bg{ background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0.65))), url(../img/form/bg_bear.webp) 0 53%/cover no-repeat; }
+
+.webp .reservations-tour__bg{ background: -o-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(../img/form/bg_bear.webp) 0 53%/cover no-repeat; }
+
+.webp .reservations-tour__bg{ background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(../img/form/bg_bear.webp) 0 53%/cover no-repeat; }
+
+.webp .hunting-tour__row{ background: url(../img/hunting_tour/bg.webp) center/cover no-repeat; }
+
+.webp .fish-products:nth-child(1){ background: url(../img/fish_farming/young_fish.webp) 0 0/cover no-repeat; }
+
+.webp .fish-products:nth-child(2){ background: url(../img/fish_farming/carp.webp) center/cover no-repeat; }
+
+.webp .page-error-404{ background: url(../img/error_404/bg.webp) center/cover no-repeat; }
+
+@media (max-width: 61.99875em){
+
+  .webp .short-description-bg__row{ background: url(../img/short_description/bg_black.webp) 17% 0/cover no-repeat; }
+}
+
+@media (max-width: 61.99875em){
+
+  .webp .short-description-bg__row_position{ background: url(../img/short_description/bg_black.webp) 76.3% 0/cover no-repeat; }
+}
+
+@media (max-width: 61.99875em){
+
+  .webp .location__row{ background: -webkit-gradient(linear, left top, right top, from(rgba(19, 19, 22, 0.75)), to(rgba(19, 19, 22, 0.75))), url(../img/location/bg.webp) 43% -224%/cover no-repeat; }
+}
+
+@media (max-width: 61.99875em){
+
+  .webp .location__row{ background: -o-linear-gradient(left, rgba(19, 19, 22, 0.75) 0%, rgba(19, 19, 22, 0.75) 100%), url(../img/location/bg.webp) 43% -224%/cover no-repeat; }
+}
+
+@media (max-width: 61.99875em){
+
+  .webp .location__row{ background: linear-gradient(90deg, rgba(19, 19, 22, 0.75) 0%, rgba(19, 19, 22, 0.75) 100%), url(../img/location/bg.webp) 43% -224%/cover no-repeat; }
+}
+
+@media (max-width: 61.99875em){
+
+  .webp .reservations-tour__bg{ background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0.65))), url(../img/form/bg_bear.webp) 30% 53%/cover no-repeat; }
+}
+
+@media (max-width: 61.99875em){
+
+  .webp .reservations-tour__bg{ background: -o-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(../img/form/bg_bear.webp) 30% 53%/cover no-repeat; }
+}
+
+@media (max-width: 61.99875em){
+
+  .webp .reservations-tour__bg{ background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(../img/form/bg_bear.webp) 30% 53%/cover no-repeat; }
+}
+
+@media (max-width: 61.99875em){
+
+  .webp .hunting-tour__row{ background: url(../img/hunting_tour/bg.webp) left center/cover no-repeat; }
+}
+
+@media (max-width: 47.99875em){
+
+  .webp .hunting-tour__row{ background: url(../img/hunting_tour/bg.webp) 20% center/cover no-repeat; }
+}
+
+@media (max-width: 29.99875em){
+
+  .webp .reservations-tour__bg{ background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0.65))), url(../img/form/bg_bear.webp) 33.8% 58%/540% no-repeat; }
+}
+
+@media (max-width: 29.99875em){
+
+  .webp .reservations-tour__bg{ background: -o-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(../img/form/bg_bear.webp) 33.8% 58%/540% no-repeat; }
+}
+
+@media (max-width: 29.99875em){
+
+  .webp .reservations-tour__bg{ background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(../img/form/bg_bear.webp) 33.8% 58%/540% no-repeat; }
+}
+
+/*отступ у блоков верх/низ*/
+.padding-48-96 {
+	padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0 clamp(3.75rem, 1.459rem + 7.33vw, 6rem);
+ }
+ 
+ .padding-96-48 {
+	padding: clamp(3.75rem, 1.459rem + 7.33vw, 6rem) 0 clamp(1.875rem, 0.729rem + 3.67vw, 3rem);
+ }
+ 
+ .padding-96 {
+	padding: clamp(3.75rem, 1.459rem + 7.33vw, 6rem) 0;
+ }
+ 
+ .padding-48 {
+	padding: clamp(1.875rem, 0.729rem + 3.67vw, 3rem) 0;
+ }
+ 
+ .padding-0 {
+	padding: 0;
+ }
+ /*отступ у блоков верх/низ -end*/
+
+ /* 22.05.25 */
+ .short-description ul li,
+ .short-description-bg ul li {
+	font-weight: 400;
+	padding-left: 1.5rem;
+	position: relative;
+}
+
+.short-description ul li:not(:last-child),
+.short-description-bg ul li:not(:last-child){
+	margin-bottom: rem(2);
+	}
+.short-description ul li::before,
+.short-description-bg ul li::before {
+	content: "";
+	width: 0.1875rem;
+	height: 0.1875rem;
+	border-radius: 50%;
+	position: absolute;
+	top: 0.625rem;
+	left: 0.625rem;
+}
+.short-description ul li::before {
+	background: var(--main-color);
+}
+ .short-description-bg ol,
+.short-description-bg ul{
+		margin-bottom: clamp(0.5rem, 0.032rem + 1.5vw, 0.75rem);
+	}
+	.short-description-bg ul li::before {
+		background: var(--bg-color);
+	}
+	/* 22.05.25 - end*/
+
+	/* 01.07.25 */
+	.types-activities__card-hove {
+		position: relative;
+	}
+	.types-activities__image::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: rgba(236, 253, 243, 0.6);
+	position: absolute;
+	bottom: -100%;
+	left: 0;
+	z-index: 2;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.4s ease-in-out;
+	}
+	.types-activities__card-hover:hover .types-activities__image::before {
+		opacity: 1;
+		bottom: 0;
+		visibility: visible;
+	}
+	.types-activities__links-item {
+		position: absolute;
+		bottom: -100%;
+		left: 0;
+		padding: 1rem;
+		opacity: 0;
+		z-index: 3;
+		visibility: hidden;
+		transition: all 0.4s ease-in-out;
+	}
+	.types-activities__card-hover:hover .types-activities__links-item {
+		opacity: 1;
+		bottom: 0;
+		visibility: visible;
+	}
+	.types-activities__links-item a{
+		color: var(--black-color);
+		display: block;
+		font-size: 1rem;
+		line-height: 1;
+	}
+	.types-activities__links-item a:hover{
+		color: #464646;
+	}
+	.types-activities__links-item a:not(:last-child){
+	margin-bottom: 0.7rem;
+	}
+	/* 01.07.25 - end*/
+
+	/* 17.07.25 */
+	.form-reservations__policy {
+		padding-top: clamp(0.938rem, 0.352rem + 1.87vw, 1.25rem);
+		display: flex;
+		gap: 0.5rem;
+		font-size: 14px;
+	}
+	@media (max-width: 23.4375em) {
+		.no-webp .reservations-tour__bg {
+			background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(../img/form/bg_bear.jpg) 35.8% 58% / 660% no-repeat;
+		}
+	}
+	.form-reservations__policy input {
+		flex: 0 0 0.85rem;
+		width: 0.85rem;
+		height: 0.85rem;
+		position: relative;
+		top: 0.15rem;
+	}
+	.form-reservations__policy input:focus {
+		box-shadow: none;
+	}
+	/* 17.07.25 - end*/
